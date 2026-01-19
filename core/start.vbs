@@ -10,4 +10,4 @@ currentDir = fso.GetParentFolderName(WScript.ScriptFullName)
 psScript = "-WindowStyle Hidden -ExecutionPolicy Bypass -File " & chr(34) & currentDir & "\tray.ps1" & chr(34)
 
 ' Execute the PowerShell script with administrator privileges
-CreateObject("Shell.Application").ShellExecute "powershell.exe", psScript, currentDir, "runas", 0
+CreateObject("Shell.Application").ShellExecute "powershell.exe", psScript, currentDir, "runas", 1
