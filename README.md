@@ -1,6 +1,6 @@
 ## Singbox Tray Tool
 
-This project now also includes a tray utility for [sing-box](https://github.com/SagerNet/sing-box), sharing the same design philosophy as the Rclone tool.
+This project now also includes a tray utility for [sing-box](https://github.com/SagerNet/sing-box).
 
 ### 📂 Singbox Directory Structure
 

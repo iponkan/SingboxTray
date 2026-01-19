@@ -1,6 +1,6 @@
 ## Bonus: Singbox 托盘工具
 
-本项目现在也包含一个用于 [sing-box](https://github.com/SagerNet/sing-box) 的托盘工具，它与 Rclone 托盘工具共享相同的设计理念。
+本项目现在也包含一个用于 [sing-box](https://github.com/SagerNet/sing-box) 的托盘工具。
 
 ### 📂 Singbox 目录结构
 
