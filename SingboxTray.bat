@@ -20,8 +20,7 @@ if not exist "%CORE_DIR%\sing-box.exe" (
     echo.
     echo  找不到: "%CORE_DIR%\sing-box.exe"
     echo.
-    echo  请先将 "sing-box.exe" 和 "windows.json"
-    echo  这两个文件放入 "%CORE_DIR%" 文件夹中。
+    echo  请先将 "sing-box.exe" 放入 "%CORE_DIR%" 文件夹中。
     echo.
     echo  按任意键打开该文件夹...
     pause >nul
@@ -41,6 +40,7 @@ echo.
 echo    [2] 创建桌面快捷方式
 echo    [3] 添加到开机自启
 echo    [4] 打开 Core 文件夹 (管理 sing-box.exe)
+echo    [5] 设置订阅链接
 echo.
 echo    [0] 退出
 echo.
@@ -51,6 +51,7 @@ if "%choice%"=="1" goto START_TRAY
 if "%choice%"=="2" goto INSTALL_SHORTCUT
 if "%choice%"=="3" goto AUTOSTART
 if "%choice%"=="4" goto OPEN_FOLDER
+if "%choice%"=="5" goto SET_URL
 if "%choice%"=="0" exit
 goto MENU
 
@@ -61,6 +62,27 @@ start "" "%VBS_LAUNCHER%"
 echo [成功] 程序已在后台启动。请检查系统托盘区域。
 timeout /t 3 >nul
 goto MENU
+
+:SET_URL
+cls
+echo =================================================
+echo                 设置订阅链接
+echo =================================================
+echo.
+echo  请输入您的 Singbox 订阅链接:
+echo.
+set /p "URL="
+if defined URL (
+    echo !URL! > "%CORE_DIR%\url.conf"
+    echo.
+    echo [成功] 订阅链接已保存。
+) else (
+    echo.
+    echo [取消] 未输入链接，操作已取消。
+)
+pause
+goto MENU
+
 
 :INSTALL_SHORTCUT
 cls

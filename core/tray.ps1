@@ -20,6 +20,7 @@ try {
 $CurrentDir   = Split-Path -Parent $MyInvocation.MyCommand.Path
 $SingboxExe   = Join-Path $CurrentDir "sing-box.exe"
 $SingboxConf  = Join-Path $CurrentDir "windows.json"
+$UrlConfFile  = Join-Path $CurrentDir "url.conf"
 $WebUIUrl     = "http://127.0.0.1:9090/ui/"
 
 # --- Pre-flight Checks ---
@@ -27,9 +28,29 @@ if (-not (Test-Path $SingboxExe)) {
     [System.Windows.Forms.MessageBox]::Show("错误: 'sing-box.exe' 不存在！`n请将 sing-box.exe 放置于 'core' 文件夹内。", "Singbox Tray", "OK", "Error")
     exit
 }
-if (-not (Test-Path $SingboxConf)) {
-    [System.Windows.Forms.MessageBox]::Show("错误: 'windows.json' 配置文件不存在！`n请将您的配置文件放置于 'core' 文件夹内。", "Singbox Tray", "OK", "Error")
-    exit
+
+# --- Function: Update Configuration ---
+function Update-Config {
+    if (-not (Test-Path $UrlConfFile)) {
+        $NotifyIcon.ShowBalloonTip(1000, "Singbox Tray", "未找到订阅链接文件，请先在 .bat 文件中设置。", [System.Windows.Forms.ToolTipIcon]::Warning)
+        return
+    }
+    
+    $ConfigUrl = (Get-Content $UrlConfFile -ErrorAction SilentlyContinue).Trim()
+
+    if ([string]::IsNullOrWhiteSpace($ConfigUrl)) {
+        $NotifyIcon.ShowBalloonTip(1000, "Singbox Tray", "订阅链接为空，请在 .bat 文件中重新设置。", [System.Windows.Forms.ToolTipIcon]::Warning)
+        return
+    }
+
+    $NotifyIcon.ShowBalloonTip(1000, "Singbox Tray", "正在更新订阅...", [System.Windows.Forms.ToolTipIcon]::Info)
+    try {
+        Invoke-WebRequest -Uri $ConfigUrl -OutFile $SingboxConf -UseBasicParsing
+        $NotifyIcon.ShowBalloonTip(1000, "Singbox Tray", "订阅更新成功！", [System.Windows.Forms.ToolTipIcon]::Info)
+    } catch {
+        $NotifyIcon.ShowBalloonTip(1000, "Singbox Tray", "订阅更新失败！请检查链接或网络。", [System.Windows.Forms.ToolTipIcon]::Error)
+        $_.Exception.Message | Out-File -FilePath (Join-Path $CurrentDir "error.log") -Append
+    }
 }
 
 # --- Function: Stop Sing-box ---
@@ -46,6 +67,11 @@ function Stop-Singbox {
 
 # --- Function: Start Sing-box ---
 function Start-Singbox {
+    # Check if config file exists after attempting download
+    if (-not (Test-Path $SingboxConf)) {
+        [System.Windows.Forms.MessageBox]::Show("错误: 'windows.json' 配置文件不存在！`n请先更新订阅或手动放置配置文件。", "Singbox Tray", "OK", "Error")
+        return # Stop execution if config is missing
+    }
     # Check if process is already running before starting a new one
     $existingProcess = Get-Process -Name "sing-box" -ErrorAction SilentlyContinue
     if (-not $existingProcess) {
@@ -77,8 +103,9 @@ $ContextMenu.Items.Add("-") | Out-Null # Separator
 $MenuItemRestart = $ContextMenu.Items.Add("重启服务 (Restart)")
 $MenuItemRestart.Add_Click({
     Stop-Singbox
+    Update-Config
     Start-Singbox
-    $NotifyIcon.ShowBalloonTip(1000, "Singbox Tray", "服务已重启", [System.Windows.Forms.ToolTipIcon]::Info)
+    $NotifyIcon.ShowBalloonTip(1000, "Singbox Tray", "服务已重启并更新订阅", [System.Windows.Forms.ToolTipIcon]::Info)
 })
 
 $ContextMenu.Items.Add("-") | Out-Null # Separator
@@ -102,9 +129,11 @@ $NotifyIcon.Add_DoubleClick({
 # --- Main Execution ---
 # 1. Clean up any old instances
 Stop-Singbox
-# 2. Start a fresh instance
+# 2. Update config
+Update-Config
+# 3. Start a fresh instance
 Start-Singbox
-# 3. Show a startup notification
+# 4. Show a startup notification
 $NotifyIcon.ShowBalloonTip(1000, "Singbox Tray", "Singbox 服务已启动", [System.Windows.Forms.ToolTipIcon]::Info)
-# 4. Keep the tray icon alive
+# 5. Keep the tray icon alive
 [System.Windows.Forms.Application]::Run()
