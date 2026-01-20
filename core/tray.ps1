@@ -100,12 +100,23 @@ $MenuItemOpenUI.Add_Click({
 
 $ContextMenu.Items.Add("-") | Out-Null # Separator
 
-$MenuItemRestart = $ContextMenu.Items.Add("重启服务 (Restart)")
-$MenuItemRestart.Add_Click({
+# [NEW] Update Subscription Item
+$MenuItemUpdate = $ContextMenu.Items.Add("更新订阅并重启 (Update Subscription)")
+$MenuItemUpdate.Add_Click({
     Stop-Singbox
     Update-Config
     Start-Singbox
-    $NotifyIcon.ShowBalloonTip(1000, "Singbox Tray", "服务已重启并更新订阅", [System.Windows.Forms.ToolTipIcon]::Info)
+    # Note: Balloon tip is already handled inside Update-Config and Start-Singbox logic mainly, 
+    # but we can add a completion message here if needed.
+})
+
+# [MODIFIED] Restart Service (Now only restarts, does not update)
+$MenuItemRestart = $ContextMenu.Items.Add("重启服务 (Restart Service)")
+$MenuItemRestart.Add_Click({
+    Stop-Singbox
+    # Removed Update-Config from here based on user request
+    Start-Singbox
+    $NotifyIcon.ShowBalloonTip(1000, "Singbox Tray", "服务已重启 (使用本地配置)", [System.Windows.Forms.ToolTipIcon]::Info)
 })
 
 $ContextMenu.Items.Add("-") | Out-Null # Separator
@@ -129,11 +140,17 @@ $NotifyIcon.Add_DoubleClick({
 # --- Main Execution ---
 # 1. Clean up any old instances
 Stop-Singbox
-# 2. Update config
-Update-Config
+
+# 2. Update config ONLY if it doesn't exist
+if (-not (Test-Path $SingboxConf)) {
+    Update-Config
+}
+
 # 3. Start a fresh instance
 Start-Singbox
+
 # 4. Show a startup notification
 $NotifyIcon.ShowBalloonTip(1000, "Singbox Tray", "Singbox 服务已启动", [System.Windows.Forms.ToolTipIcon]::Info)
+
 # 5. Keep the tray icon alive
 [System.Windows.Forms.Application]::Run()
