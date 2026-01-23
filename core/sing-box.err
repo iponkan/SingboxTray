@@ -1,0 +1,848 @@
++0800 2026-01-23 23:06:26 [36mINFO[0m network: updated default interface WLAN, index 2
++0800 2026-01-23 23:06:26 [37mDEBUG[0m endpoint/tailscale[ts-ep]: tsnet running state path D:\Software\SingboxTray\core\tailscale\tailscaled.state
++0800 2026-01-23 23:06:26 [37mDEBUG[0m endpoint/tailscale[ts-ep]: tsnet starting with hostname "Team-Laptop", varRoot "D:\\Software\\SingboxTray\\core\\tailscale"
++0800 2026-01-23 23:06:26 [37mDEBUG[0m endpoint/tailscale[ts-ep]: LocalBackend state is NeedsLogin; running StartLoginInteractive...
++0800 2026-01-23 23:06:26 [37mDEBUG[0m dns: lookup domain controlplane.tailscale.com
++0800 2026-01-23 23:06:26 [37mDEBUG[0m dns: exchanged controlplane.tailscale.com NOERROR 12
++0800 2026-01-23 23:06:26 [37mDEBUG[0m dns: exchanged A controlplane.tailscale.com. 12 IN A 192.200.0.109
++0800 2026-01-23 23:06:26 [37mDEBUG[0m dns: exchanged A controlplane.tailscale.com. 12 IN A 192.200.0.116
++0800 2026-01-23 23:06:26 [37mDEBUG[0m dns: exchanged A controlplane.tailscale.com. 12 IN A 192.200.0.111
++0800 2026-01-23 23:06:26 [37mDEBUG[0m dns: exchanged A controlplane.tailscale.com. 12 IN A 192.200.0.115
++0800 2026-01-23 23:06:26 [37mDEBUG[0m dns: exchanged A controlplane.tailscale.com. 12 IN A 192.200.0.113
++0800 2026-01-23 23:06:26 [37mDEBUG[0m dns: exchanged A controlplane.tailscale.com. 12 IN A 192.200.0.104
++0800 2026-01-23 23:06:26 [37mDEBUG[0m dns: exchanged A controlplane.tailscale.com. 12 IN A 192.200.0.114
++0800 2026-01-23 23:06:26 [37mDEBUG[0m dns: exchanged A controlplane.tailscale.com. 12 IN A 192.200.0.112
++0800 2026-01-23 23:06:26 [37mDEBUG[0m dns: exchanged A controlplane.tailscale.com. 12 IN A 192.200.0.108
++0800 2026-01-23 23:06:26 [37mDEBUG[0m dns: exchanged A controlplane.tailscale.com. 12 IN A 192.200.0.110
++0800 2026-01-23 23:06:26 [37mDEBUG[0m dns: exchanged A controlplane.tailscale.com. 12 IN A 192.200.0.107
++0800 2026-01-23 23:06:26 [37mDEBUG[0m dns: exchanged A controlplane.tailscale.com. 12 IN A 192.200.0.103
++0800 2026-01-23 23:06:26 [37mDEBUG[0m dns: exchanged A controlplane.tailscale.com. 12 IN A 192.200.0.106
++0800 2026-01-23 23:06:26 [37mDEBUG[0m dns: exchanged A controlplane.tailscale.com. 12 IN A 192.200.0.105
++0800 2026-01-23 23:06:26 [37mDEBUG[0m dns: exchanged A controlplane.tailscale.com. 12 IN A 192.200.0.102
++0800 2026-01-23 23:06:26 [37mDEBUG[0m dns: exchanged A controlplane.tailscale.com. 12 IN A 192.200.0.101
++0800 2026-01-23 23:06:26 [37mDEBUG[0m dns: lookup succeed for controlplane.tailscale.com: 192.200.0.109 192.200.0.116 192.200.0.111 192.200.0.115 192.200.0.113 192.200.0.104 192.200.0.114 192.200.0.112 192.200.0.108 192.200.0.110 192.200.0.107 192.200.0.103 192.200.0.106 192.200.0.105 192.200.0.102 192.200.0.101
++0800 2026-01-23 23:06:27 [36mINFO[0m inbound/tun[tun-in]: started at tun0
++0800 2026-01-23 23:06:27 [36mINFO[0m inbound/mixed[mixed-in]: tcp server started at 0.0.0.0:7890
++0800 2026-01-23 23:06:27 [36mINFO[0m clash-api: restful api listening at [::]:9090
++0800 2026-01-23 23:06:27 [36mINFO[0m sing-box started (0.400s)
++0800 2026-01-23 23:06:27 [36mINFO[0m [[38;5;30m4230044901[0m 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:52081
++0800 2026-01-23 23:06:27 [36mINFO[0m [[38;5;30m4230044901[0m 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
++0800 2026-01-23 23:06:27 [37mDEBUG[0m [[38;5;30m4230044901[0m 0ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:27 [37mDEBUG[0m [[38;5;30m4230044901[0m 0ms] router: sniffed packet protocol: dns
++0800 2026-01-23 23:06:27 [37mDEBUG[0m [[38;5;30m4230044901[0m 0ms] router: match[2] port=53 || protocol=dns => hijack-dns
++0800 2026-01-23 23:06:27 [37mDEBUG[0m [[38;5;30m4230044901[0m 0ms] dns: exchange vpn.qzuie.edu.cn. IN A
++0800 2026-01-23 23:06:27 [37mDEBUG[0m [[38;5;30m4230044901[0m 1ms] dns: match[11] rule_set=geosite_cn => route(dns_local)
++0800 2026-01-23 23:06:27 [37mDEBUG[0m router: found fakeip domain: cp601.prod.do.dsp.mp.microsoft.com
++0800 2026-01-23 23:06:27 [37mDEBUG[0m [[38;5;30m4230044901[0m 45ms] dns: exchanged vpn.qzuie.edu.cn NOERROR 1001
++0800 2026-01-23 23:06:27 [36mINFO[0m [[38;5;30m4230044901[0m 45ms] dns: exchanged A vpn.qzuie.edu.cn. 1001 IN A 59.61.214.98
++0800 2026-01-23 23:06:27 [37mDEBUG[0m router: found fakeip domain: cp601.prod.do.dsp.mp.microsoft.com
++0800 2026-01-23 23:06:27 [37mDEBUG[0m router: found fakeip domain: signaler-pa.googleapis.com
++0800 2026-01-23 23:06:27 [37mDEBUG[0m router: found fakeip domain: crl4.digicert.com
++0800 2026-01-23 23:06:27 [37mDEBUG[0m router: found fakeip domain: play.googleapis.com
++0800 2026-01-23 23:06:27 [36mINFO[0m [[38;5;231m1050629120[0m 1ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:64536
++0800 2026-01-23 23:06:27 [36mINFO[0m [[38;5;231m1050629120[0m 1ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
++0800 2026-01-23 23:06:27 [37mDEBUG[0m [[38;5;231m1050629120[0m 1ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:27 [37mDEBUG[0m [[38;5;231m1050629120[0m 1ms] router: sniffed packet protocol: dns
++0800 2026-01-23 23:06:27 [37mDEBUG[0m [[38;5;231m1050629120[0m 1ms] router: match[2] port=53 || protocol=dns => hijack-dns
++0800 2026-01-23 23:06:27 [37mDEBUG[0m [[38;5;231m1050629120[0m 1ms] dns: exchange www.msftconnecttest.com. IN A
++0800 2026-01-23 23:06:27 [37mDEBUG[0m [[38;5;231m1050629120[0m 1ms] dns: match[9] rule_set=geosite-fakeipfilter => route(dns_local)
++0800 2026-01-23 23:06:27 [36mINFO[0m [[38;5;35m3209815315[0m 0ms] inbound/tun[tun-in]: inbound connection from 198.18.0.1:14711
++0800 2026-01-23 23:06:27 [36mINFO[0m [[38;5;35m3209815315[0m 0ms] inbound/tun[tun-in]: inbound connection to 23.56.109.203:80
++0800 2026-01-23 23:06:27 [37mDEBUG[0m [[38;5;35m3209815315[0m 0ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:27 [37mDEBUG[0m [[38;5;35m3209815315[0m 0ms] router: sniffed protocol: http, domain: www.msftconnecttest.com
++0800 2026-01-23 23:06:27 [37mDEBUG[0m [[38;5;35m3209815315[0m 0ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:06:27 [36mINFO[0m [[38;5;35m3209815315[0m 0ms] outbound/vless[🇺🇸 racknerd]: outbound connection to 23.56.109.203:80
++0800 2026-01-23 23:06:27 [37mDEBUG[0m [[38;5;35m3209815315[0m 0ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:06:27 [37mDEBUG[0m [[38;5;231m1050629120[0m 82ms] dns: exchanged www.msftconnecttest.com NOERROR 17
++0800 2026-01-23 23:06:27 [36mINFO[0m [[38;5;231m1050629120[0m 83ms] dns: exchanged CNAME www.msftconnecttest.com. 17 IN CNAME ncsi-geo.trafficmanager.net.
++0800 2026-01-23 23:06:27 [36mINFO[0m [[38;5;231m1050629120[0m 83ms] dns: exchanged CNAME ncsi-geo.trafficmanager.net. 17 IN CNAME www.msftncsi.com.edgesuite.net.
++0800 2026-01-23 23:06:27 [36mINFO[0m [[38;5;231m1050629120[0m 83ms] dns: exchanged CNAME www.msftncsi.com.edgesuite.net. 17 IN CNAME a1961.g2.akamai.net.
++0800 2026-01-23 23:06:27 [36mINFO[0m [[38;5;231m1050629120[0m 83ms] dns: exchanged A a1961.g2.akamai.net. 17 IN A 23.192.36.9
++0800 2026-01-23 23:06:27 [36mINFO[0m [[38;5;231m1050629120[0m 83ms] dns: exchanged A a1961.g2.akamai.net. 17 IN A 23.192.36.8
++0800 2026-01-23 23:06:27 [37mDEBUG[0m router: found reserve mapped domain: a1961.g2.akamai.net
++0800 2026-01-23 23:06:27 [36mINFO[0m [[38;5;150m3406898566[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:14712
++0800 2026-01-23 23:06:27 [36mINFO[0m [[38;5;150m3406898566[0m 0ms] inbound/tun[tun-in]: inbound connection to 23.192.36.9:80
++0800 2026-01-23 23:06:27 [37mDEBUG[0m [[38;5;150m3406898566[0m 0ms] router: found reserve mapped domain: a1961.g2.akamai.net
++0800 2026-01-23 23:06:27 [37mDEBUG[0m [[38;5;150m3406898566[0m 0ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:27 [37mDEBUG[0m [[38;5;150m3406898566[0m 1ms] router: sniffed protocol: http, domain: www.msftconnecttest.com
++0800 2026-01-23 23:06:27 [37mDEBUG[0m [[38;5;150m3406898566[0m 1ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:06:27 [36mINFO[0m [[38;5;150m3406898566[0m 1ms] outbound/vless[🇺🇸 racknerd]: outbound connection to 23.192.36.9:80
++0800 2026-01-23 23:06:27 [37mDEBUG[0m [[38;5;150m3406898566[0m 1ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:06:27 [37mDEBUG[0m [[38;5;35m3209815315[0m 87ms] dns: exchanged ponkan.pp.ua NOERROR 1
++0800 2026-01-23 23:06:27 [37mDEBUG[0m [[38;5;35m3209815315[0m 87ms] dns: exchanged A ponkan.pp.ua. 1 IN A 148.135.101.100
++0800 2026-01-23 23:06:27 [37mDEBUG[0m [[38;5;35m3209815315[0m 87ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:06:27 [37mDEBUG[0m [[38;5;150m3406898566[0m 3ms] dns: cached ponkan.pp.ua NOERROR 0
++0800 2026-01-23 23:06:27 [37mDEBUG[0m [[38;5;150m3406898566[0m 3ms] dns: cached A ponkan.pp.ua. 0 IN A 148.135.101.100
++0800 2026-01-23 23:06:27 [37mDEBUG[0m [[38;5;150m3406898566[0m 3ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:06:27 [37mDEBUG[0m router: found fakeip domain: settings-win.data.microsoft.com
++0800 2026-01-23 23:06:27 [37mDEBUG[0m dns: lookup domain controlplane.tailscale.com
++0800 2026-01-23 23:06:27 [36mINFO[0m dns: lookup succeed for controlplane.tailscale.com: 192.200.0.109 192.200.0.116 192.200.0.111 192.200.0.115 192.200.0.113 192.200.0.104 192.200.0.114 192.200.0.112 192.200.0.108 192.200.0.110 192.200.0.107 192.200.0.103 192.200.0.106 192.200.0.105 192.200.0.102 192.200.0.101
++0800 2026-01-23 23:06:27 [36mINFO[0m endpoint/tailscale[ts-ep]: output connection to 192.200.0.109:80
++0800 2026-01-23 23:06:27 [36mINFO[0m [[38;5;150m3406898566[0m 391ms] outbound/vless[🇺🇸 racknerd]: outbound connection to 23.192.36.9:80
++0800 2026-01-23 23:06:27 [36mINFO[0m [[38;5;35m3209815315[0m 476ms] outbound/vless[🇺🇸 racknerd]: outbound connection to 23.56.109.203:80
++0800 2026-01-23 23:06:28 [37mDEBUG[0m [[38;5;150m3406898566[0m 574ms] connection: connection download finished
++0800 2026-01-23 23:06:28 [37mDEBUG[0m [[38;5;35m3209815315[0m 659ms] connection: connection download finished
++0800 2026-01-23 23:06:28 [36mINFO[0m [[38;5;188m3883921580[0m 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:52849
++0800 2026-01-23 23:06:28 [36mINFO[0m [[38;5;188m3883921580[0m 1ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
++0800 2026-01-23 23:06:28 [37mDEBUG[0m [[38;5;188m3883921580[0m 1ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:28 [37mDEBUG[0m [[38;5;188m3883921580[0m 1ms] router: sniffed packet protocol: dns
++0800 2026-01-23 23:06:28 [37mDEBUG[0m [[38;5;188m3883921580[0m 1ms] router: match[2] port=53 || protocol=dns => hijack-dns
++0800 2026-01-23 23:06:28 [37mDEBUG[0m [[38;5;188m3883921580[0m 2ms] dns: exchange mtalk.google.com. IN A
++0800 2026-01-23 23:06:28 [37mDEBUG[0m [[38;5;188m3883921580[0m 2ms] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:06:28 [37mDEBUG[0m [[38;5;188m3883921580[0m 2ms] dns: exchanged mtalk.google.com NOERROR 1
++0800 2026-01-23 23:06:28 [36mINFO[0m [[38;5;188m3883921580[0m 2ms] dns: exchanged A mtalk.google.com. 1 IN A 198.18.0.11
++0800 2026-01-23 23:06:28 [36mINFO[0m endpoint/tailscale[ts-ep]: Waiting for authentication: https://login.tailscale.com/a/1def115c017cea
++0800 2026-01-23 23:06:28 [37mDEBUG[0m router: found fakeip domain: crl3.digicert.com
++0800 2026-01-23 23:06:30 [36mINFO[0m [[38;5;34m1359631337[0m 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:65176
++0800 2026-01-23 23:06:30 [36mINFO[0m [[38;5;34m1359631337[0m 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
++0800 2026-01-23 23:06:30 [37mDEBUG[0m [[38;5;34m1359631337[0m 1ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:30 [37mDEBUG[0m [[38;5;34m1359631337[0m 1ms] router: sniffed packet protocol: dns
++0800 2026-01-23 23:06:30 [37mDEBUG[0m [[38;5;34m1359631337[0m 1ms] router: match[2] port=53 || protocol=dns => hijack-dns
++0800 2026-01-23 23:06:30 [37mDEBUG[0m [[38;5;34m1359631337[0m 2ms] dns: exchange mtalk.google.com. IN A
++0800 2026-01-23 23:06:30 [37mDEBUG[0m [[38;5;34m1359631337[0m 2ms] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:06:30 [37mDEBUG[0m [[38;5;34m1359631337[0m 2ms] dns: exchanged mtalk.google.com NOERROR 1
++0800 2026-01-23 23:06:30 [36mINFO[0m [[38;5;34m1359631337[0m 2ms] dns: exchanged A mtalk.google.com. 1 IN A 198.18.0.11
++0800 2026-01-23 23:06:30 [36mINFO[0m [[38;5;107m826184795[0m 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:60106
++0800 2026-01-23 23:06:30 [36mINFO[0m [[38;5;107m826184795[0m 1ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
++0800 2026-01-23 23:06:30 [37mDEBUG[0m [[38;5;107m826184795[0m 2ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:30 [37mDEBUG[0m [[38;5;107m826184795[0m 2ms] router: sniffed packet protocol: dns
++0800 2026-01-23 23:06:30 [37mDEBUG[0m [[38;5;107m826184795[0m 2ms] router: match[2] port=53 || protocol=dns => hijack-dns
++0800 2026-01-23 23:06:30 [37mDEBUG[0m [[38;5;107m826184795[0m 3ms] dns: exchange settings-win.data.microsoft.com. IN A
++0800 2026-01-23 23:06:30 [37mDEBUG[0m [[38;5;107m826184795[0m 3ms] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:06:30 [37mDEBUG[0m [[38;5;107m826184795[0m 3ms] dns: exchanged settings-win.data.microsoft.com NOERROR 1
++0800 2026-01-23 23:06:30 [36mINFO[0m [[38;5;107m826184795[0m 4ms] dns: exchanged A settings-win.data.microsoft.com. 1 IN A 198.18.0.5
++0800 2026-01-23 23:06:31 [36mINFO[0m [[38;5;30m1438617358[0m 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:63645
++0800 2026-01-23 23:06:31 [36mINFO[0m [[38;5;30m1438617358[0m 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
++0800 2026-01-23 23:06:31 [37mDEBUG[0m [[38;5;30m1438617358[0m 0ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:31 [37mDEBUG[0m [[38;5;30m1438617358[0m 1ms] router: sniffed packet protocol: dns
++0800 2026-01-23 23:06:31 [37mDEBUG[0m [[38;5;30m1438617358[0m 1ms] router: match[2] port=53 || protocol=dns => hijack-dns
++0800 2026-01-23 23:06:31 [37mDEBUG[0m [[38;5;30m1438617358[0m 2ms] dns: exchange fd.api.iris.microsoft.com. IN A
++0800 2026-01-23 23:06:31 [37mDEBUG[0m [[38;5;30m1438617358[0m 2ms] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:06:31 [37mDEBUG[0m [[38;5;30m1438617358[0m 2ms] dns: exchanged fd.api.iris.microsoft.com NOERROR 1
++0800 2026-01-23 23:06:31 [36mINFO[0m [[38;5;30m1438617358[0m 2ms] dns: exchanged A fd.api.iris.microsoft.com. 1 IN A 198.18.0.41
++0800 2026-01-23 23:06:32 [36mINFO[0m [[38;5;221m2963430093[0m 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:58432
++0800 2026-01-23 23:06:32 [36mINFO[0m [[38;5;221m2963430093[0m 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
++0800 2026-01-23 23:06:32 [37mDEBUG[0m [[38;5;221m2963430093[0m 0ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:32 [37mDEBUG[0m [[38;5;221m2963430093[0m 1ms] router: sniffed packet protocol: dns
++0800 2026-01-23 23:06:32 [37mDEBUG[0m [[38;5;221m2963430093[0m 1ms] router: match[2] port=53 || protocol=dns => hijack-dns
++0800 2026-01-23 23:06:32 [37mDEBUG[0m [[38;5;221m2963430093[0m 1ms] dns: exchange www.google.com. IN A
++0800 2026-01-23 23:06:32 [37mDEBUG[0m [[38;5;221m2963430093[0m 1ms] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:06:32 [37mDEBUG[0m [[38;5;221m2963430093[0m 1ms] dns: exchanged www.google.com NOERROR 1
++0800 2026-01-23 23:06:32 [36mINFO[0m [[38;5;221m2963430093[0m 2ms] dns: exchanged A www.google.com. 1 IN A 198.18.0.13
++0800 2026-01-23 23:06:32 [36mINFO[0m [[38;5;84m252068243[0m 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:56672
++0800 2026-01-23 23:06:32 [36mINFO[0m [[38;5;84m252068243[0m 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
++0800 2026-01-23 23:06:32 [37mDEBUG[0m [[38;5;84m252068243[0m 0ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:32 [37mDEBUG[0m [[38;5;84m252068243[0m 1ms] router: sniffed packet protocol: dns
++0800 2026-01-23 23:06:32 [37mDEBUG[0m [[38;5;84m252068243[0m 1ms] router: match[2] port=53 || protocol=dns => hijack-dns
++0800 2026-01-23 23:06:32 [37mDEBUG[0m [[38;5;84m252068243[0m 1ms] dns: exchange settings-win.data.microsoft.com. IN A
++0800 2026-01-23 23:06:32 [37mDEBUG[0m [[38;5;84m252068243[0m 2ms] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:06:32 [37mDEBUG[0m [[38;5;84m252068243[0m 2ms] dns: exchanged settings-win.data.microsoft.com NOERROR 1
++0800 2026-01-23 23:06:32 [36mINFO[0m [[38;5;84m252068243[0m 2ms] dns: exchanged A settings-win.data.microsoft.com. 1 IN A 198.18.0.5
++0800 2026-01-23 23:06:34 [37mDEBUG[0m router: found fakeip domain: v10.events.data.microsoft.com
++0800 2026-01-23 23:06:34 [37mDEBUG[0m router: found fakeip domain: antigravity-unleash.goog
++0800 2026-01-23 23:06:35 [36mINFO[0m [[38;5;72m197543224[0m 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:62029
++0800 2026-01-23 23:06:35 [36mINFO[0m [[38;5;72m197543224[0m 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
++0800 2026-01-23 23:06:35 [37mDEBUG[0m [[38;5;72m197543224[0m 0ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:35 [37mDEBUG[0m [[38;5;72m197543224[0m 1ms] router: sniffed packet protocol: dns
++0800 2026-01-23 23:06:35 [37mDEBUG[0m [[38;5;72m197543224[0m 1ms] router: match[2] port=53 || protocol=dns => hijack-dns
++0800 2026-01-23 23:06:35 [37mDEBUG[0m [[38;5;72m197543224[0m 1ms] dns: exchange ecs.office.com. IN A
++0800 2026-01-23 23:06:35 [37mDEBUG[0m [[38;5;72m197543224[0m 2ms] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:06:35 [37mDEBUG[0m [[38;5;72m197543224[0m 2ms] dns: exchanged ecs.office.com NOERROR 1
++0800 2026-01-23 23:06:35 [36mINFO[0m [[38;5;72m197543224[0m 2ms] dns: exchanged A ecs.office.com. 1 IN A 198.18.0.42
++0800 2026-01-23 23:06:37 [37mDEBUG[0m router: found fakeip domain: crl3.digicert.com
++0800 2026-01-23 23:06:37 [37mDEBUG[0m router: found fakeip domain: kv501.prod.do.dsp.mp.microsoft.com
++0800 2026-01-23 23:06:37 [37mDEBUG[0m router: found fakeip domain: kv501.prod.do.dsp.mp.microsoft.com
++0800 2026-01-23 23:06:38 [36mINFO[0m [[38;5;225m2951338246[0m 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:50747
++0800 2026-01-23 23:06:38 [36mINFO[0m [[38;5;225m2951338246[0m 3ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;225m2951338246[0m 4ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;225m2951338246[0m 5ms] router: sniffed packet protocol: dns
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;225m2951338246[0m 7ms] router: match[2] port=53 || protocol=dns => hijack-dns
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;225m2951338246[0m 9ms] dns: exchange go.microsoft.com. IN A
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;225m2951338246[0m 9ms] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;225m2951338246[0m 10ms] dns: exchanged go.microsoft.com NOERROR 1
++0800 2026-01-23 23:06:38 [36mINFO[0m [[38;5;225m2951338246[0m 11ms] dns: exchanged A go.microsoft.com. 1 IN A 198.18.0.9
++0800 2026-01-23 23:06:38 [36mINFO[0m [[38;5;80m1505863744[0m 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:53825
++0800 2026-01-23 23:06:38 [36mINFO[0m [[38;5;80m1505863744[0m 1ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;80m1505863744[0m 2ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;80m1505863744[0m 2ms] router: sniffed packet protocol: dns
++0800 2026-01-23 23:06:38 [37mDEBUG[0m router: found fakeip domain: go.microsoft.com
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;80m1505863744[0m 3ms] router: match[2] port=53 || protocol=dns => hijack-dns
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;80m1505863744[0m 3ms] dns: exchange signaler-pa.googleapis.com. IN A
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;80m1505863744[0m 4ms] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;80m1505863744[0m 4ms] dns: exchanged signaler-pa.googleapis.com NOERROR 1
++0800 2026-01-23 23:06:38 [36mINFO[0m [[38;5;80m1505863744[0m 4ms] dns: exchanged A signaler-pa.googleapis.com. 1 IN A 198.18.0.37
++0800 2026-01-23 23:06:38 [36mINFO[0m [[38;5;70m1180663606[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:12865
++0800 2026-01-23 23:06:38 [36mINFO[0m [[38;5;70m1180663606[0m 1ms] inbound/tun[tun-in]: inbound connection to 198.18.0.9:443
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;70m1180663606[0m 2ms] router: found fakeip domain: go.microsoft.com
++0800 2026-01-23 23:06:38 [37mDEBUG[0m router: found fakeip domain: signaler-pa.googleapis.com
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;70m1180663606[0m 2ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;70m1180663606[0m 3ms] router: sniffed protocol: tls, domain: go.microsoft.com
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;70m1180663606[0m 3ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:06:38 [36mINFO[0m [[38;5;156m370264204[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:12866
++0800 2026-01-23 23:06:38 [36mINFO[0m [[38;5;156m370264204[0m 0ms] inbound/tun[tun-in]: inbound connection to 198.18.0.37:443
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;156m370264204[0m 0ms] router: found fakeip domain: signaler-pa.googleapis.com
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;156m370264204[0m 1ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:38 [36mINFO[0m [[38;5;70m1180663606[0m 4ms] outbound/vless[🇺🇸 racknerd]: outbound connection to go.microsoft.com:443
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;70m1180663606[0m 5ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;156m370264204[0m 1ms] router: sniffed protocol: tls, domain: signaler-pa.googleapis.com
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;156m370264204[0m 2ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:06:38 [36mINFO[0m [[38;5;156m370264204[0m 2ms] outbound/vless[🇺🇸 racknerd]: outbound connection to signaler-pa.googleapis.com:443
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;156m370264204[0m 3ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:06:38 [36mINFO[0m [[38;5;66m2144784690[0m 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:54556
++0800 2026-01-23 23:06:38 [36mINFO[0m [[38;5;66m2144784690[0m 0ms] inbound/tun[tun-in]: inbound packet connection to 209.250.254.15:21116
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;66m2144784690[0m 1ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:38 [36mINFO[0m [[38;5;66m2144784690[0m 1ms] outbound/vless[🇺🇸 racknerd]: outbound packet connection to 209.250.254.15:21116
++0800 2026-01-23 23:06:38 [36mINFO[0m [[38;5;66m2144784690[0m 2ms] outbound/vless[🇺🇸 racknerd]: outbound packet connection to 209.250.254.15:21116
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;66m2144784690[0m 2ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;70m1180663606[0m 126ms] dns: exchanged ponkan.pp.ua NOERROR 290
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;70m1180663606[0m 129ms] dns: exchanged A ponkan.pp.ua. 290 IN A 148.135.101.100
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;70m1180663606[0m 129ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;66m2144784690[0m 48ms] dns: cached ponkan.pp.ua NOERROR 289
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;66m2144784690[0m 50ms] dns: cached A ponkan.pp.ua. 289 IN A 148.135.101.100
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;66m2144784690[0m 50ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;156m370264204[0m 126ms] dns: cached ponkan.pp.ua NOERROR 289
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;156m370264204[0m 129ms] dns: cached A ponkan.pp.ua. 289 IN A 148.135.101.100
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;156m370264204[0m 130ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:06:38 [36mINFO[0m endpoint/tailscale[ts-ep]: output connection to 192.200.0.109:443
++0800 2026-01-23 23:06:38 [36mINFO[0m [[38;5;137m2171145593[0m 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:49617
++0800 2026-01-23 23:06:38 [36mINFO[0m [[38;5;137m2171145593[0m 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;137m2171145593[0m 1ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;137m2171145593[0m 1ms] router: sniffed packet protocol: dns
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;137m2171145593[0m 1ms] router: match[2] port=53 || protocol=dns => hijack-dns
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;137m2171145593[0m 2ms] dns: exchange www.msftconnecttest.com. IN A
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;137m2171145593[0m 2ms] dns: match[9] rule_set=geosite-fakeipfilter => route(dns_local)
++0800 2026-01-23 23:06:38 [36mINFO[0m [[38;5;229m4089767385[0m 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:51825
++0800 2026-01-23 23:06:38 [36mINFO[0m [[38;5;229m4089767385[0m 2ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;137m2171145593[0m 3ms] dns: cached www.msftconnecttest.com NOERROR 6
++0800 2026-01-23 23:06:38 [36mINFO[0m [[38;5;137m2171145593[0m 5ms] dns: cached CNAME www.msftconnecttest.com. 6 IN CNAME ncsi-geo.trafficmanager.net.
++0800 2026-01-23 23:06:38 [36mINFO[0m [[38;5;137m2171145593[0m 6ms] dns: cached CNAME ncsi-geo.trafficmanager.net. 6 IN CNAME www.msftncsi.com.edgesuite.net.
++0800 2026-01-23 23:06:38 [36mINFO[0m [[38;5;137m2171145593[0m 7ms] dns: cached CNAME www.msftncsi.com.edgesuite.net. 6 IN CNAME a1961.g2.akamai.net.
++0800 2026-01-23 23:06:38 [36mINFO[0m [[38;5;137m2171145593[0m 8ms] dns: cached A a1961.g2.akamai.net. 6 IN A 23.192.36.9
++0800 2026-01-23 23:06:38 [36mINFO[0m [[38;5;137m2171145593[0m 9ms] dns: cached A a1961.g2.akamai.net. 6 IN A 23.192.36.8
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;229m4089767385[0m 2ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;229m4089767385[0m 9ms] router: sniffed packet protocol: dns
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;229m4089767385[0m 9ms] router: match[2] port=53 || protocol=dns => hijack-dns
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;229m4089767385[0m 11ms] dns: exchange ipv6.msftconnecttest.com. IN A
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;229m4089767385[0m 12ms] dns: match[9] rule_set=geosite-fakeipfilter => route(dns_local)
++0800 2026-01-23 23:06:38 [37mDEBUG[0m router: found reserve mapped domain: a1961.g2.akamai.net
++0800 2026-01-23 23:06:38 [36mINFO[0m [[38;5;225m1090165213[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:12872
++0800 2026-01-23 23:06:38 [36mINFO[0m [[38;5;225m1090165213[0m 1ms] inbound/tun[tun-in]: inbound connection to 23.192.36.9:80
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;225m1090165213[0m 2ms] router: found reserve mapped domain: a1961.g2.akamai.net
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;225m1090165213[0m 3ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;225m1090165213[0m 3ms] router: sniffed protocol: http, domain: www.msftconnecttest.com
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;225m1090165213[0m 3ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:06:38 [36mINFO[0m [[38;5;225m1090165213[0m 3ms] outbound/vless[🇺🇸 racknerd]: outbound connection to 23.192.36.9:80
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;225m1090165213[0m 4ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;225m1090165213[0m 4ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:06:38 [37mDEBUG[0m [[38;5;229m4089767385[0m 40ms] dns: exchanged ipv6.msftconnecttest.com NOERROR 144
++0800 2026-01-23 23:06:38 [36mINFO[0m [[38;5;229m4089767385[0m 41ms] dns: exchanged CNAME ipv6.msftconnecttest.com. 144 IN CNAME ncsiv6-geo.trafficmanager.net.
++0800 2026-01-23 23:06:38 [36mINFO[0m [[38;5;229m4089767385[0m 42ms] dns: exchanged CNAME ncsiv6-geo.trafficmanager.net. 144 IN CNAME ipv6.msftconnecttest.com.edgesuite.net.
++0800 2026-01-23 23:06:38 [36mINFO[0m [[38;5;229m4089767385[0m 43ms] dns: exchanged CNAME ipv6.msftconnecttest.com.edgesuite.net. 144 IN CNAME a1968.i6g1.akamai.net.
++0800 2026-01-23 23:06:38 [36mINFO[0m [[38;5;229m4089767385[0m 43ms] dns: exchanged SOA i6g1.akamai.net. 144 IN SOA n0i6g1.akamai.net. hostmaster.akamai.com. 1769180341 1000 1000 1000 1800
++0800 2026-01-23 23:06:38 [36mINFO[0m [[38;5;70m1180663606[0m 497ms] outbound/vless[🇺🇸 racknerd]: outbound connection to go.microsoft.com:443
++0800 2026-01-23 23:06:38 [36mINFO[0m [[38;5;156m370264204[0m 510ms] outbound/vless[🇺🇸 racknerd]: outbound connection to signaler-pa.googleapis.com:443
++0800 2026-01-23 23:06:39 [36mINFO[0m [[38;5;68m1503473716[0m 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:62600
++0800 2026-01-23 23:06:39 [36mINFO[0m [[38;5;68m1503473716[0m 1ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
++0800 2026-01-23 23:06:39 [37mDEBUG[0m [[38;5;68m1503473716[0m 2ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:39 [37mDEBUG[0m [[38;5;68m1503473716[0m 2ms] router: sniffed packet protocol: dns
++0800 2026-01-23 23:06:39 [37mDEBUG[0m [[38;5;68m1503473716[0m 2ms] router: match[2] port=53 || protocol=dns => hijack-dns
++0800 2026-01-23 23:06:39 [37mDEBUG[0m [[38;5;68m1503473716[0m 2ms] dns: exchange mtalk.google.com. IN A
++0800 2026-01-23 23:06:39 [37mDEBUG[0m [[38;5;68m1503473716[0m 2ms] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:06:39 [37mDEBUG[0m [[38;5;68m1503473716[0m 3ms] dns: exchanged mtalk.google.com NOERROR 1
++0800 2026-01-23 23:06:39 [36mINFO[0m [[38;5;68m1503473716[0m 3ms] dns: exchanged A mtalk.google.com. 1 IN A 198.18.0.11
++0800 2026-01-23 23:06:39 [37mDEBUG[0m router: found fakeip domain: mtalk.google.com
++0800 2026-01-23 23:06:39 [36mINFO[0m [[38;5;216m4237900744[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:2541
++0800 2026-01-23 23:06:39 [36mINFO[0m [[38;5;216m4237900744[0m 0ms] inbound/tun[tun-in]: inbound connection to 198.18.0.11:5228
++0800 2026-01-23 23:06:39 [37mDEBUG[0m [[38;5;216m4237900744[0m 0ms] router: found fakeip domain: mtalk.google.com
++0800 2026-01-23 23:06:39 [37mDEBUG[0m [[38;5;216m4237900744[0m 1ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:39 [37mDEBUG[0m [[38;5;216m4237900744[0m 1ms] router: sniffed protocol: tls, domain: mtalk.google.com
++0800 2026-01-23 23:06:39 [37mDEBUG[0m [[38;5;216m4237900744[0m 2ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:06:39 [36mINFO[0m [[38;5;216m4237900744[0m 2ms] outbound/vless[🇺🇸 racknerd]: outbound connection to mtalk.google.com:5228
++0800 2026-01-23 23:06:39 [37mDEBUG[0m [[38;5;216m4237900744[0m 2ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:06:39 [37mDEBUG[0m [[38;5;216m4237900744[0m 3ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:06:39 [37mDEBUG[0m [[38;5;70m1180663606[0m 1.49s] connection: connection download finished
++0800 2026-01-23 23:06:39 [37mDEBUG[0m router: found fakeip domain: go.microsoft.com
++0800 2026-01-23 23:06:39 [36mINFO[0m [[38;5;82m1981482306[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:2543
++0800 2026-01-23 23:06:39 [36mINFO[0m [[38;5;82m1981482306[0m 2ms] inbound/tun[tun-in]: inbound connection to 198.18.0.9:443
++0800 2026-01-23 23:06:39 [37mDEBUG[0m [[38;5;82m1981482306[0m 2ms] router: found fakeip domain: go.microsoft.com
++0800 2026-01-23 23:06:39 [37mDEBUG[0m [[38;5;82m1981482306[0m 3ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:39 [37mDEBUG[0m [[38;5;82m1981482306[0m 4ms] router: sniffed protocol: tls, domain: go.microsoft.com
++0800 2026-01-23 23:06:39 [37mDEBUG[0m [[38;5;82m1981482306[0m 4ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:06:39 [36mINFO[0m [[38;5;82m1981482306[0m 4ms] outbound/vless[🇺🇸 racknerd]: outbound connection to go.microsoft.com:443
++0800 2026-01-23 23:06:39 [37mDEBUG[0m [[38;5;82m1981482306[0m 5ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:06:39 [37mDEBUG[0m [[38;5;82m1981482306[0m 6ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:06:40 [36mINFO[0m [[38;5;216m4237900744[0m 445ms] outbound/vless[🇺🇸 racknerd]: outbound connection to mtalk.google.com:5228
++0800 2026-01-23 23:06:40 [36mINFO[0m [[38;5;225m1090165213[0m 2.41s] outbound/vless[🇺🇸 racknerd]: outbound connection to 23.192.36.9:80
++0800 2026-01-23 23:06:41 [37mDEBUG[0m [[38;5;225m1090165213[0m 2.60s] connection: connection download finished
++0800 2026-01-23 23:06:41 [37mDEBUG[0m [[38;5;68m1503473716[0m 1.76s] dns: exchange optimizationguide-pa.googleapis.com. IN A
++0800 2026-01-23 23:06:41 [37mDEBUG[0m [[38;5;68m1503473716[0m 1.76s] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:06:41 [37mDEBUG[0m [[38;5;68m1503473716[0m 1.76s] dns: exchanged optimizationguide-pa.googleapis.com NOERROR 1
++0800 2026-01-23 23:06:41 [36mINFO[0m [[38;5;68m1503473716[0m 1.76s] dns: exchanged A optimizationguide-pa.googleapis.com. 1 IN A 198.18.0.15
++0800 2026-01-23 23:06:41 [37mDEBUG[0m router: found fakeip domain: optimizationguide-pa.googleapis.com
++0800 2026-01-23 23:06:41 [36mINFO[0m [[38;5;153m2315111049[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:5913
++0800 2026-01-23 23:06:41 [36mINFO[0m [[38;5;153m2315111049[0m 0ms] inbound/tun[tun-in]: inbound connection to 198.18.0.15:443
++0800 2026-01-23 23:06:41 [37mDEBUG[0m [[38;5;153m2315111049[0m 1ms] router: found fakeip domain: optimizationguide-pa.googleapis.com
++0800 2026-01-23 23:06:41 [37mDEBUG[0m [[38;5;153m2315111049[0m 1ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:41 [37mDEBUG[0m [[38;5;153m2315111049[0m 1ms] router: sniffed protocol: tls, domain: optimizationguide-pa.googleapis.com
++0800 2026-01-23 23:06:41 [37mDEBUG[0m [[38;5;153m2315111049[0m 1ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:06:41 [36mINFO[0m [[38;5;153m2315111049[0m 2ms] outbound/vless[🇺🇸 racknerd]: outbound connection to optimizationguide-pa.googleapis.com:443
++0800 2026-01-23 23:06:41 [37mDEBUG[0m [[38;5;153m2315111049[0m 2ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:06:41 [37mDEBUG[0m [[38;5;153m2315111049[0m 2ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:06:41 [36mINFO[0m [[38;5;82m1981482306[0m 1.80s] outbound/vless[🇺🇸 racknerd]: outbound connection to go.microsoft.com:443
++0800 2026-01-23 23:06:41 [36mINFO[0m [[38;5;153m2315111049[0m 382ms] outbound/vless[🇺🇸 racknerd]: outbound connection to optimizationguide-pa.googleapis.com:443
++0800 2026-01-23 23:06:41 [37mDEBUG[0m [[38;5;82m1981482306[0m 2.18s] connection: connection download finished
++0800 2026-01-23 23:06:41 [37mDEBUG[0m [[38;5;68m1503473716[0m 2.23s] dns: exchange go.microsoft.com. IN A
++0800 2026-01-23 23:06:41 [37mDEBUG[0m [[38;5;68m1503473716[0m 2.23s] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:06:41 [37mDEBUG[0m [[38;5;68m1503473716[0m 2.23s] dns: exchanged go.microsoft.com NOERROR 1
++0800 2026-01-23 23:06:41 [36mINFO[0m [[38;5;68m1503473716[0m 2.23s] dns: exchanged A go.microsoft.com. 1 IN A 198.18.0.9
++0800 2026-01-23 23:06:41 [37mDEBUG[0m router: found fakeip domain: go.microsoft.com
++0800 2026-01-23 23:06:41 [36mINFO[0m [[38;5;95m2324633423[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:5915
++0800 2026-01-23 23:06:41 [36mINFO[0m [[38;5;95m2324633423[0m 1ms] inbound/tun[tun-in]: inbound connection to 198.18.0.9:443
++0800 2026-01-23 23:06:41 [37mDEBUG[0m [[38;5;95m2324633423[0m 1ms] router: found fakeip domain: go.microsoft.com
++0800 2026-01-23 23:06:41 [37mDEBUG[0m [[38;5;95m2324633423[0m 2ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:41 [37mDEBUG[0m [[38;5;95m2324633423[0m 6ms] router: sniffed protocol: tls, domain: go.microsoft.com
++0800 2026-01-23 23:06:41 [37mDEBUG[0m [[38;5;95m2324633423[0m 6ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:06:41 [36mINFO[0m [[38;5;95m2324633423[0m 8ms] outbound/vless[🇺🇸 racknerd]: outbound connection to go.microsoft.com:443
++0800 2026-01-23 23:06:41 [37mDEBUG[0m [[38;5;95m2324633423[0m 9ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:06:41 [37mDEBUG[0m [[38;5;95m2324633423[0m 9ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:06:42 [36mINFO[0m [[38;5;95m2324633423[0m 505ms] outbound/vless[🇺🇸 racknerd]: outbound connection to go.microsoft.com:443
++0800 2026-01-23 23:06:42 [37mDEBUG[0m [[38;5;95m2324633423[0m 912ms] connection: connection download finished
++0800 2026-01-23 23:06:47 [37mDEBUG[0m [[38;5;68m1503473716[0m 7.79s] dns: exchange clients4.google.com. IN A
++0800 2026-01-23 23:06:47 [37mDEBUG[0m [[38;5;68m1503473716[0m 7.79s] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:06:47 [37mDEBUG[0m [[38;5;68m1503473716[0m 7.79s] dns: exchanged clients4.google.com NOERROR 1
++0800 2026-01-23 23:06:47 [36mINFO[0m [[38;5;68m1503473716[0m 7.79s] dns: exchanged A clients4.google.com. 1 IN A 198.18.0.36
++0800 2026-01-23 23:06:47 [37mDEBUG[0m router: found fakeip domain: clients4.google.com
++0800 2026-01-23 23:06:47 [36mINFO[0m [[38;5;36m4024707860[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:13768
++0800 2026-01-23 23:06:47 [36mINFO[0m [[38;5;36m4024707860[0m 0ms] inbound/tun[tun-in]: inbound connection to 198.18.0.36:443
++0800 2026-01-23 23:06:47 [37mDEBUG[0m [[38;5;36m4024707860[0m 0ms] router: found fakeip domain: clients4.google.com
++0800 2026-01-23 23:06:47 [37mDEBUG[0m [[38;5;36m4024707860[0m 1ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:47 [37mDEBUG[0m [[38;5;36m4024707860[0m 1ms] router: sniffed protocol: tls, domain: clients4.google.com
++0800 2026-01-23 23:06:47 [37mDEBUG[0m [[38;5;36m4024707860[0m 1ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:06:47 [36mINFO[0m [[38;5;36m4024707860[0m 2ms] outbound/vless[🇺🇸 racknerd]: outbound connection to clients4.google.com:443
++0800 2026-01-23 23:06:47 [37mDEBUG[0m [[38;5;36m4024707860[0m 2ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:06:47 [37mDEBUG[0m [[38;5;36m4024707860[0m 2ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:06:48 [36mINFO[0m [[38;5;36m4024707860[0m 583ms] outbound/vless[🇺🇸 racknerd]: outbound connection to clients4.google.com:443
++0800 2026-01-23 23:06:48 [37mDEBUG[0m [[38;5;68m1503473716[0m 8.63s] dns: exchange config.immersivetranslate.com. IN A
++0800 2026-01-23 23:06:48 [37mDEBUG[0m [[38;5;68m1503473716[0m 8.63s] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:06:48 [37mDEBUG[0m [[38;5;68m1503473716[0m 8.63s] dns: exchanged config.immersivetranslate.com NOERROR 1
++0800 2026-01-23 23:06:48 [36mINFO[0m [[38;5;68m1503473716[0m 8.63s] dns: exchanged A config.immersivetranslate.com. 1 IN A 198.18.0.19
++0800 2026-01-23 23:06:48 [37mDEBUG[0m router: found fakeip domain: config.immersivetranslate.com
++0800 2026-01-23 23:06:48 [36mINFO[0m [[38;5;32m1105153511[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:7454
++0800 2026-01-23 23:06:48 [36mINFO[0m [[38;5;32m1105153511[0m 0ms] inbound/tun[tun-in]: inbound connection to 198.18.0.19:443
++0800 2026-01-23 23:06:48 [37mDEBUG[0m [[38;5;32m1105153511[0m 0ms] router: found fakeip domain: config.immersivetranslate.com
++0800 2026-01-23 23:06:48 [37mDEBUG[0m [[38;5;32m1105153511[0m 1ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:48 [37mDEBUG[0m [[38;5;32m1105153511[0m 1ms] router: sniffed protocol: tls, domain: config.immersivetranslate.com
++0800 2026-01-23 23:06:48 [37mDEBUG[0m [[38;5;32m1105153511[0m 2ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:06:48 [36mINFO[0m [[38;5;32m1105153511[0m 2ms] outbound/vless[🇺🇸 racknerd]: outbound connection to config.immersivetranslate.com:443
++0800 2026-01-23 23:06:48 [37mDEBUG[0m [[38;5;32m1105153511[0m 2ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:06:48 [37mDEBUG[0m [[38;5;32m1105153511[0m 2ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:06:48 [36mINFO[0m [[38;5;32m1105153511[0m 464ms] outbound/vless[🇺🇸 racknerd]: outbound connection to config.immersivetranslate.com:443
++0800 2026-01-23 23:06:50 [36mINFO[0m outbound/direct[DIRECT]: outbound connection to www.gstatic.com:443
++0800 2026-01-23 23:06:50 [37mDEBUG[0m dns: lookup domain www.gstatic.com
++0800 2026-01-23 23:06:50 [36mINFO[0m outbound/trojan[🇸🇬 新加坡]: outbound connection to www.gstatic.com:443
++0800 2026-01-23 23:06:50 [37mDEBUG[0m dns: lookup domain oss-guangzhou.solidigm-zxcv.com
++0800 2026-01-23 23:06:50 [36mINFO[0m outbound/trojan[🇺🇸 西数]: outbound connection to www.gstatic.com:443
++0800 2026-01-23 23:06:50 [37mDEBUG[0m dns: lookup domain oss-shanghai.solidigm-zxcv.com
++0800 2026-01-23 23:06:50 [36mINFO[0m outbound/vless[🇺🇸 racknerd]: outbound connection to www.gstatic.com:443
++0800 2026-01-23 23:06:50 [37mDEBUG[0m dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:06:50 [37mDEBUG[0m dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:06:50 [37mDEBUG[0m dns: exchanged oss-shanghai.solidigm-zxcv.com NOERROR 298
++0800 2026-01-23 23:06:50 [37mDEBUG[0m dns: exchanged A oss-shanghai.solidigm-zxcv.com. 298 IN A 43.227.71.135
++0800 2026-01-23 23:06:50 [37mDEBUG[0m dns: lookup succeed for oss-shanghai.solidigm-zxcv.com: 43.227.71.135
++0800 2026-01-23 23:06:50 [37mDEBUG[0m dns: exchanged www.gstatic.com NOERROR 149
++0800 2026-01-23 23:06:50 [37mDEBUG[0m dns: exchanged A www.gstatic.com. 149 IN A 180.163.151.34
++0800 2026-01-23 23:06:50 [37mDEBUG[0m dns: lookup succeed for www.gstatic.com: 180.163.151.34
++0800 2026-01-23 23:06:50 [37mDEBUG[0m dns: exchanged oss-guangzhou.solidigm-zxcv.com NOERROR 166
++0800 2026-01-23 23:06:50 [37mDEBUG[0m dns: exchanged A oss-guangzhou.solidigm-zxcv.com. 166 IN A 113.108.0.46
++0800 2026-01-23 23:06:50 [37mDEBUG[0m dns: lookup succeed for oss-guangzhou.solidigm-zxcv.com: 113.108.0.46
++0800 2026-01-23 23:06:50 [37mDEBUG[0m clash-api: outbound DIRECT available: 446ms
++0800 2026-01-23 23:06:50 [37mDEBUG[0m clash-api: outbound 🇸🇬 新加坡 available: 192ms
++0800 2026-01-23 23:06:50 [36mINFO[0m outbound/vless[🇺🇸 racknerd]: outbound connection to www.gstatic.com:443
++0800 2026-01-23 23:06:51 [37mDEBUG[0m clash-api: outbound 🇺🇸 西数 available: 593ms
++0800 2026-01-23 23:06:51 [37mDEBUG[0m clash-api: outbound 🇺🇸 racknerd available: 398ms
++0800 2026-01-23 23:06:51 [37mDEBUG[0m [[38;5;68m1503473716[0m 11.78s] dns: exchange ai.immersivetranslate.com. IN A
++0800 2026-01-23 23:06:51 [37mDEBUG[0m [[38;5;68m1503473716[0m 11.78s] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:06:51 [37mDEBUG[0m [[38;5;68m1503473716[0m 11.79s] dns: exchanged ai.immersivetranslate.com NOERROR 1
++0800 2026-01-23 23:06:51 [36mINFO[0m [[38;5;68m1503473716[0m 11.79s] dns: exchanged A ai.immersivetranslate.com. 1 IN A 198.18.0.21
++0800 2026-01-23 23:06:51 [37mDEBUG[0m router: found fakeip domain: ai.immersivetranslate.com
++0800 2026-01-23 23:06:51 [36mINFO[0m [[38;5;230m2175927768[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:2349
++0800 2026-01-23 23:06:51 [36mINFO[0m [[38;5;230m2175927768[0m 0ms] inbound/tun[tun-in]: inbound connection to 198.18.0.21:443
++0800 2026-01-23 23:06:51 [37mDEBUG[0m [[38;5;230m2175927768[0m 1ms] router: found fakeip domain: ai.immersivetranslate.com
++0800 2026-01-23 23:06:51 [37mDEBUG[0m [[38;5;230m2175927768[0m 2ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:51 [37mDEBUG[0m [[38;5;230m2175927768[0m 2ms] router: sniffed protocol: tls, domain: ai.immersivetranslate.com
++0800 2026-01-23 23:06:51 [37mDEBUG[0m [[38;5;230m2175927768[0m 2ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:06:51 [36mINFO[0m [[38;5;230m2175927768[0m 3ms] outbound/vless[🇺🇸 racknerd]: outbound connection to ai.immersivetranslate.com:443
++0800 2026-01-23 23:06:51 [37mDEBUG[0m [[38;5;230m2175927768[0m 3ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:06:51 [37mDEBUG[0m [[38;5;230m2175927768[0m 3ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:06:52 [36mINFO[0m [[38;5;230m2175927768[0m 710ms] outbound/vless[🇺🇸 racknerd]: outbound connection to ai.immersivetranslate.com:443
++0800 2026-01-23 23:06:52 [37mDEBUG[0m [[38;5;68m1503473716[0m 12.69s] dns: exchange antigravity-unleash.goog. IN A
++0800 2026-01-23 23:06:52 [37mDEBUG[0m [[38;5;68m1503473716[0m 12.69s] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:06:52 [37mDEBUG[0m [[38;5;68m1503473716[0m 12.69s] dns: exchanged antigravity-unleash.goog NOERROR 1
++0800 2026-01-23 23:06:52 [36mINFO[0m [[38;5;68m1503473716[0m 12.69s] dns: exchanged A antigravity-unleash.goog. 1 IN A 198.18.0.29
++0800 2026-01-23 23:06:52 [37mDEBUG[0m router: found fakeip domain: antigravity-unleash.goog
++0800 2026-01-23 23:06:52 [36mINFO[0m [[38;5;51m625164794[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:2353
++0800 2026-01-23 23:06:52 [36mINFO[0m [[38;5;51m625164794[0m 1ms] inbound/tun[tun-in]: inbound connection to 198.18.0.29:443
++0800 2026-01-23 23:06:52 [37mDEBUG[0m [[38;5;51m625164794[0m 1ms] router: found fakeip domain: antigravity-unleash.goog
++0800 2026-01-23 23:06:52 [37mDEBUG[0m [[38;5;51m625164794[0m 2ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:52 [37mDEBUG[0m [[38;5;51m625164794[0m 2ms] router: sniffed protocol: tls, domain: antigravity-unleash.goog
++0800 2026-01-23 23:06:52 [37mDEBUG[0m [[38;5;51m625164794[0m 4ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:06:52 [36mINFO[0m [[38;5;51m625164794[0m 7ms] outbound/vless[🇺🇸 racknerd]: outbound connection to antigravity-unleash.goog:443
++0800 2026-01-23 23:06:52 [37mDEBUG[0m [[38;5;51m625164794[0m 8ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:06:52 [37mDEBUG[0m [[38;5;51m625164794[0m 9ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:06:52 [36mINFO[0m [[38;5;51m625164794[0m 418ms] outbound/vless[🇺🇸 racknerd]: outbound connection to antigravity-unleash.goog:443
++0800 2026-01-23 23:06:53 [37mDEBUG[0m [[38;5;68m1503473716[0m 13.43s] dns: exchange www.google.com. IN A
++0800 2026-01-23 23:06:53 [37mDEBUG[0m [[38;5;68m1503473716[0m 13.43s] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:06:53 [37mDEBUG[0m [[38;5;68m1503473716[0m 13.43s] dns: exchanged www.google.com NOERROR 1
++0800 2026-01-23 23:06:53 [36mINFO[0m [[38;5;68m1503473716[0m 13.43s] dns: exchanged A www.google.com. 1 IN A 198.18.0.13
++0800 2026-01-23 23:06:53 [37mDEBUG[0m router: found fakeip domain: www.google.com
++0800 2026-01-23 23:06:53 [36mINFO[0m [[38;5;224m1918226384[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:3197
++0800 2026-01-23 23:06:53 [36mINFO[0m [[38;5;224m1918226384[0m 0ms] inbound/tun[tun-in]: inbound connection to 198.18.0.13:443
++0800 2026-01-23 23:06:53 [37mDEBUG[0m [[38;5;224m1918226384[0m 0ms] router: found fakeip domain: www.google.com
++0800 2026-01-23 23:06:53 [37mDEBUG[0m [[38;5;224m1918226384[0m 1ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:53 [37mDEBUG[0m [[38;5;224m1918226384[0m 1ms] router: sniffed protocol: tls, domain: www.google.com
++0800 2026-01-23 23:06:53 [37mDEBUG[0m [[38;5;224m1918226384[0m 1ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:06:53 [36mINFO[0m [[38;5;224m1918226384[0m 2ms] outbound/vless[🇺🇸 racknerd]: outbound connection to www.google.com:443
++0800 2026-01-23 23:06:53 [37mDEBUG[0m [[38;5;224m1918226384[0m 2ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:06:53 [37mDEBUG[0m [[38;5;224m1918226384[0m 2ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:06:53 [37mDEBUG[0m router: found fakeip domain: www.google.com
++0800 2026-01-23 23:06:53 [36mINFO[0m [[38;5;104m3988651352[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:3832
++0800 2026-01-23 23:06:53 [36mINFO[0m [[38;5;104m3988651352[0m 0ms] inbound/tun[tun-in]: inbound connection to 198.18.0.13:443
++0800 2026-01-23 23:06:53 [37mDEBUG[0m [[38;5;104m3988651352[0m 1ms] router: found fakeip domain: www.google.com
++0800 2026-01-23 23:06:53 [37mDEBUG[0m [[38;5;104m3988651352[0m 1ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:53 [37mDEBUG[0m [[38;5;104m3988651352[0m 1ms] router: sniffed protocol: tls, domain: www.google.com
++0800 2026-01-23 23:06:53 [37mDEBUG[0m [[38;5;104m3988651352[0m 1ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:06:53 [36mINFO[0m [[38;5;104m3988651352[0m 2ms] outbound/vless[🇺🇸 racknerd]: outbound connection to www.google.com:443
++0800 2026-01-23 23:06:53 [37mDEBUG[0m [[38;5;104m3988651352[0m 2ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:06:53 [37mDEBUG[0m [[38;5;104m3988651352[0m 2ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:06:53 [37mDEBUG[0m router: found fakeip domain: www.google.com
++0800 2026-01-23 23:06:53 [36mINFO[0m [[38;5;28m205370124[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:14694
++0800 2026-01-23 23:06:53 [36mINFO[0m [[38;5;28m205370124[0m 0ms] inbound/tun[tun-in]: inbound connection to 198.18.0.13:443
++0800 2026-01-23 23:06:53 [37mDEBUG[0m [[38;5;28m205370124[0m 0ms] router: found fakeip domain: www.google.com
++0800 2026-01-23 23:06:53 [37mDEBUG[0m [[38;5;28m205370124[0m 0ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:53 [37mDEBUG[0m [[38;5;28m205370124[0m 1ms] router: sniffed protocol: tls, domain: www.google.com
++0800 2026-01-23 23:06:53 [37mDEBUG[0m [[38;5;28m205370124[0m 1ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:06:53 [36mINFO[0m [[38;5;28m205370124[0m 1ms] outbound/vless[🇺🇸 racknerd]: outbound connection to www.google.com:443
++0800 2026-01-23 23:06:53 [37mDEBUG[0m [[38;5;28m205370124[0m 1ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:06:53 [37mDEBUG[0m [[38;5;28m205370124[0m 1ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:06:53 [36mINFO[0m [[38;5;104m3988651352[0m 393ms] outbound/vless[🇺🇸 racknerd]: outbound connection to www.google.com:443
++0800 2026-01-23 23:06:53 [36mINFO[0m [[38;5;224m1918226384[0m 606ms] outbound/vless[🇺🇸 racknerd]: outbound connection to www.google.com:443
++0800 2026-01-23 23:06:53 [36mINFO[0m [[38;5;28m205370124[0m 350ms] outbound/vless[🇺🇸 racknerd]: outbound connection to www.google.com:443
++0800 2026-01-23 23:06:53 [37mDEBUG[0m [[38;5;28m205370124[0m 487ms] connection: connection upload finished
++0800 2026-01-23 23:06:53 [37mDEBUG[0m [[38;5;68m1503473716[0m 14.34s] dns: exchange optimizationguide-pa.googleapis.com. IN A
++0800 2026-01-23 23:06:54 [37mDEBUG[0m [[38;5;68m1503473716[0m 14.34s] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:06:54 [37mDEBUG[0m [[38;5;68m1503473716[0m 14.34s] dns: exchanged optimizationguide-pa.googleapis.com NOERROR 1
++0800 2026-01-23 23:06:54 [36mINFO[0m [[38;5;68m1503473716[0m 14.34s] dns: exchanged A optimizationguide-pa.googleapis.com. 1 IN A 198.18.0.15
++0800 2026-01-23 23:06:54 [37mDEBUG[0m router: found fakeip domain: optimizationguide-pa.googleapis.com
++0800 2026-01-23 23:06:54 [36mINFO[0m [[38;5;83m4126421315[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:9760
++0800 2026-01-23 23:06:54 [36mINFO[0m [[38;5;83m4126421315[0m 0ms] inbound/tun[tun-in]: inbound connection to 198.18.0.15:443
++0800 2026-01-23 23:06:54 [37mDEBUG[0m [[38;5;83m4126421315[0m 1ms] router: found fakeip domain: optimizationguide-pa.googleapis.com
++0800 2026-01-23 23:06:54 [37mDEBUG[0m [[38;5;83m4126421315[0m 1ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:54 [37mDEBUG[0m [[38;5;68m1503473716[0m 14.34s] dns: exchange www.gstatic.com. IN A
++0800 2026-01-23 23:06:54 [37mDEBUG[0m [[38;5;68m1503473716[0m 14.34s] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:06:54 [37mDEBUG[0m [[38;5;68m1503473716[0m 14.34s] dns: exchanged www.gstatic.com NOERROR 1
++0800 2026-01-23 23:06:54 [36mINFO[0m [[38;5;68m1503473716[0m 14.34s] dns: exchanged A www.gstatic.com. 1 IN A 198.18.0.23
++0800 2026-01-23 23:06:54 [37mDEBUG[0m [[38;5;83m4126421315[0m 2ms] router: sniffed protocol: tls, domain: optimizationguide-pa.googleapis.com
++0800 2026-01-23 23:06:54 [37mDEBUG[0m [[38;5;83m4126421315[0m 3ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:06:54 [36mINFO[0m [[38;5;83m4126421315[0m 4ms] outbound/vless[🇺🇸 racknerd]: outbound connection to optimizationguide-pa.googleapis.com:443
++0800 2026-01-23 23:06:54 [37mDEBUG[0m [[38;5;83m4126421315[0m 4ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:06:54 [37mDEBUG[0m [[38;5;83m4126421315[0m 4ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:06:54 [36mINFO[0m [[38;5;83m4126421315[0m 383ms] outbound/vless[🇺🇸 racknerd]: outbound connection to optimizationguide-pa.googleapis.com:443
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;68m1503473716[0m 15.43s] dns: exchange waa-pa.clients6.google.com. IN A
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;68m1503473716[0m 15.43s] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;68m1503473716[0m 15.43s] dns: exchanged waa-pa.clients6.google.com NOERROR 1
++0800 2026-01-23 23:06:55 [36mINFO[0m [[38;5;68m1503473716[0m 15.43s] dns: exchanged A waa-pa.clients6.google.com. 1 IN A 198.18.0.18
++0800 2026-01-23 23:06:55 [37mDEBUG[0m router: found fakeip domain: waa-pa.clients6.google.com
++0800 2026-01-23 23:06:55 [36mINFO[0m [[38;5;170m227397530[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:6456
++0800 2026-01-23 23:06:55 [36mINFO[0m [[38;5;170m227397530[0m 0ms] inbound/tun[tun-in]: inbound connection to 198.18.0.18:443
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;170m227397530[0m 0ms] router: found fakeip domain: waa-pa.clients6.google.com
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;170m227397530[0m 0ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;170m227397530[0m 1ms] router: sniffed protocol: tls, domain: waa-pa.clients6.google.com
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;170m227397530[0m 1ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:06:55 [36mINFO[0m [[38;5;170m227397530[0m 1ms] outbound/vless[🇺🇸 racknerd]: outbound connection to waa-pa.clients6.google.com:443
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;170m227397530[0m 2ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;170m227397530[0m 2ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;68m1503473716[0m 15.62s] dns: exchange accounts.google.com. IN A
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;68m1503473716[0m 15.62s] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;68m1503473716[0m 15.62s] dns: exchanged accounts.google.com NOERROR 1
++0800 2026-01-23 23:06:55 [36mINFO[0m [[38;5;68m1503473716[0m 15.62s] dns: exchanged A accounts.google.com. 1 IN A 198.18.0.20
++0800 2026-01-23 23:06:55 [37mDEBUG[0m router: found fakeip domain: accounts.google.com
++0800 2026-01-23 23:06:55 [36mINFO[0m [[38;5;85m2209356178[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:12758
++0800 2026-01-23 23:06:55 [36mINFO[0m [[38;5;85m2209356178[0m 0ms] inbound/tun[tun-in]: inbound connection to 198.18.0.20:443
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;85m2209356178[0m 0ms] router: found fakeip domain: accounts.google.com
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;85m2209356178[0m 0ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;85m2209356178[0m 1ms] router: sniffed protocol: tls, domain: accounts.google.com
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;85m2209356178[0m 1ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:06:55 [36mINFO[0m [[38;5;85m2209356178[0m 1ms] outbound/vless[🇺🇸 racknerd]: outbound connection to accounts.google.com:443
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;85m2209356178[0m 2ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;85m2209356178[0m 2ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:06:55 [37mDEBUG[0m router: found fakeip domain: accounts.google.com
++0800 2026-01-23 23:06:55 [37mDEBUG[0m router: found fakeip domain: waa-pa.clients6.google.com
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;224m1918226384[0m 2.84s] connection: connection upload finished
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;230m2175927768[0m 4.49s] connection: connection upload finished
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;36m4024707860[0m 8.48s] connection: connection upload finished
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;104m3988651352[0m 2.83s] connection: connection upload finished
++0800 2026-01-23 23:06:55 [36mINFO[0m [[38;5;117m2108420965[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:6589
++0800 2026-01-23 23:06:55 [36mINFO[0m [[38;5;117m2108420965[0m 2ms] inbound/tun[tun-in]: inbound connection to 198.18.0.20:443
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;117m2108420965[0m 2ms] router: found fakeip domain: accounts.google.com
++0800 2026-01-23 23:06:55 [36mINFO[0m [[38;5;140m1008452476[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:1479
++0800 2026-01-23 23:06:55 [36mINFO[0m [[38;5;140m1008452476[0m 2ms] inbound/tun[tun-in]: inbound connection to 198.18.0.18:443
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;140m1008452476[0m 2ms] router: found fakeip domain: waa-pa.clients6.google.com
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;140m1008452476[0m 2ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;32m1105153511[0m 7.64s] connection: connection upload finished
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;83m4126421315[0m 1.94s] connection: connection upload finished
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;117m2108420965[0m 2ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;140m1008452476[0m 3ms] router: sniffed protocol: tls, domain: waa-pa.clients6.google.com
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;140m1008452476[0m 4ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:06:55 [36mINFO[0m [[38;5;140m1008452476[0m 4ms] outbound/vless[🇺🇸 racknerd]: outbound connection to waa-pa.clients6.google.com:443
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;140m1008452476[0m 4ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;140m1008452476[0m 5ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;117m2108420965[0m 5ms] router: sniffed protocol: tls, domain: accounts.google.com
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;117m2108420965[0m 6ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:06:55 [36mINFO[0m [[38;5;117m2108420965[0m 7ms] outbound/vless[🇺🇸 racknerd]: outbound connection to accounts.google.com:443
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;117m2108420965[0m 7ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;117m2108420965[0m 8ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:06:55 [37mDEBUG[0m router: found fakeip domain: accounts.google.com
++0800 2026-01-23 23:06:55 [36mINFO[0m [[38;5;111m3991956575[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:10855
++0800 2026-01-23 23:06:55 [36mINFO[0m [[38;5;111m3991956575[0m 0ms] inbound/tun[tun-in]: inbound connection to 198.18.0.20:443
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;111m3991956575[0m 0ms] router: found fakeip domain: accounts.google.com
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;111m3991956575[0m 1ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;111m3991956575[0m 5ms] router: sniffed protocol: tls, domain: accounts.google.com
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;111m3991956575[0m 6ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:06:55 [36mINFO[0m [[38;5;111m3991956575[0m 7ms] outbound/vless[🇺🇸 racknerd]: outbound connection to accounts.google.com:443
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;111m3991956575[0m 7ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:06:55 [37mDEBUG[0m [[38;5;111m3991956575[0m 7ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:06:56 [36mINFO[0m [[38;5;117m2108420965[0m 373ms] outbound/vless[🇺🇸 racknerd]: outbound connection to accounts.google.com:443
++0800 2026-01-23 23:06:56 [36mINFO[0m [[38;5;140m1008452476[0m 383ms] outbound/vless[🇺🇸 racknerd]: outbound connection to waa-pa.clients6.google.com:443
++0800 2026-01-23 23:06:56 [36mINFO[0m [[38;5;170m227397530[0m 1.38s] outbound/vless[🇺🇸 racknerd]: outbound connection to waa-pa.clients6.google.com:443
++0800 2026-01-23 23:06:56 [37mDEBUG[0m [[38;5;170m227397530[0m 1.38s] connection: connection upload finished
++0800 2026-01-23 23:06:56 [36mINFO[0m [[38;5;111m3991956575[0m 604ms] outbound/vless[🇺🇸 racknerd]: outbound connection to accounts.google.com:443
++0800 2026-01-23 23:06:56 [36mINFO[0m [[38;5;85m2209356178[0m 1.38s] outbound/vless[🇺🇸 racknerd]: outbound connection to accounts.google.com:443
++0800 2026-01-23 23:06:56 [37mDEBUG[0m [[38;5;85m2209356178[0m 1.39s] connection: connection upload finished
++0800 2026-01-23 23:06:57 [37mDEBUG[0m router: found fakeip domain: waa-pa.clients6.google.com
++0800 2026-01-23 23:06:57 [36mINFO[0m [[38;5;50m3648027426[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:1968
++0800 2026-01-23 23:06:57 [36mINFO[0m [[38;5;50m3648027426[0m 0ms] inbound/tun[tun-in]: inbound connection to 198.18.0.18:443
++0800 2026-01-23 23:06:57 [37mDEBUG[0m [[38;5;50m3648027426[0m 0ms] router: found fakeip domain: waa-pa.clients6.google.com
++0800 2026-01-23 23:06:57 [37mDEBUG[0m [[38;5;50m3648027426[0m 0ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:57 [37mDEBUG[0m [[38;5;50m3648027426[0m 1ms] router: sniffed protocol: tls, domain: waa-pa.clients6.google.com
++0800 2026-01-23 23:06:57 [37mDEBUG[0m [[38;5;50m3648027426[0m 1ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:06:57 [36mINFO[0m [[38;5;50m3648027426[0m 2ms] outbound/vless[🇺🇸 racknerd]: outbound connection to waa-pa.clients6.google.com:443
++0800 2026-01-23 23:06:57 [37mDEBUG[0m [[38;5;50m3648027426[0m 3ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:06:57 [37mDEBUG[0m [[38;5;50m3648027426[0m 3ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:06:57 [36mINFO[0m [[38;5;50m3648027426[0m 379ms] outbound/vless[🇺🇸 racknerd]: outbound connection to waa-pa.clients6.google.com:443
++0800 2026-01-23 23:06:57 [37mDEBUG[0m router: found fakeip domain: ai.immersivetranslate.com
++0800 2026-01-23 23:06:57 [36mINFO[0m [[38;5;153m3274207369[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:8174
++0800 2026-01-23 23:06:57 [36mINFO[0m [[38;5;153m3274207369[0m 0ms] inbound/tun[tun-in]: inbound connection to 198.18.0.21:443
++0800 2026-01-23 23:06:57 [37mDEBUG[0m [[38;5;153m3274207369[0m 1ms] router: found fakeip domain: ai.immersivetranslate.com
++0800 2026-01-23 23:06:57 [37mDEBUG[0m [[38;5;153m3274207369[0m 1ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:57 [37mDEBUG[0m [[38;5;153m3274207369[0m 2ms] router: sniffed protocol: tls, domain: ai.immersivetranslate.com
++0800 2026-01-23 23:06:57 [37mDEBUG[0m [[38;5;153m3274207369[0m 2ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:06:57 [36mINFO[0m [[38;5;153m3274207369[0m 2ms] outbound/vless[🇺🇸 racknerd]: outbound connection to ai.immersivetranslate.com:443
++0800 2026-01-23 23:06:57 [37mDEBUG[0m [[38;5;153m3274207369[0m 3ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:06:57 [37mDEBUG[0m [[38;5;153m3274207369[0m 3ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:06:58 [36mINFO[0m [[38;5;153m3274207369[0m 391ms] outbound/vless[🇺🇸 racknerd]: outbound connection to ai.immersivetranslate.com:443
++0800 2026-01-23 23:06:59 [37mDEBUG[0m [[38;5;68m1503473716[0m 19.56s] dns: exchange gemini.google.com. IN A
++0800 2026-01-23 23:06:59 [37mDEBUG[0m [[38;5;68m1503473716[0m 19.56s] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:06:59 [37mDEBUG[0m [[38;5;68m1503473716[0m 19.56s] dns: exchanged gemini.google.com NOERROR 1
++0800 2026-01-23 23:06:59 [36mINFO[0m [[38;5;68m1503473716[0m 19.56s] dns: exchanged A gemini.google.com. 1 IN A 198.18.0.31
++0800 2026-01-23 23:06:59 [37mDEBUG[0m router: found fakeip domain: gemini.google.com
++0800 2026-01-23 23:06:59 [36mINFO[0m [[38;5;35m3927235091[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:10863
++0800 2026-01-23 23:06:59 [36mINFO[0m [[38;5;35m3927235091[0m 0ms] inbound/tun[tun-in]: inbound connection to 198.18.0.31:443
++0800 2026-01-23 23:06:59 [37mDEBUG[0m [[38;5;35m3927235091[0m 0ms] router: found fakeip domain: gemini.google.com
++0800 2026-01-23 23:06:59 [37mDEBUG[0m [[38;5;35m3927235091[0m 1ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:06:59 [37mDEBUG[0m [[38;5;35m3927235091[0m 1ms] router: sniffed protocol: tls, domain: gemini.google.com
++0800 2026-01-23 23:06:59 [37mDEBUG[0m [[38;5;35m3927235091[0m 1ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:06:59 [36mINFO[0m [[38;5;35m3927235091[0m 2ms] outbound/vless[🇺🇸 racknerd]: outbound connection to gemini.google.com:443
++0800 2026-01-23 23:06:59 [37mDEBUG[0m [[38;5;35m3927235091[0m 2ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:06:59 [37mDEBUG[0m [[38;5;35m3927235091[0m 2ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:07:00 [36mINFO[0m [[38;5;35m3927235091[0m 1.4s] outbound/vless[🇺🇸 racknerd]: outbound connection to gemini.google.com:443
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;68m1503473716[0m 21.35s] dns: exchange ogs.google.com. IN A
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;68m1503473716[0m 21.35s] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;68m1503473716[0m 21.35s] dns: exchanged ogs.google.com NOERROR 1
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;68m1503473716[0m 21.35s] dns: exchanged A ogs.google.com. 1 IN A 198.18.0.22
++0800 2026-01-23 23:07:01 [37mDEBUG[0m router: found fakeip domain: ogs.google.com
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;142m666973054[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:5288
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;142m666973054[0m 0ms] inbound/tun[tun-in]: inbound connection to 198.18.0.22:443
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;142m666973054[0m 0ms] router: found fakeip domain: ogs.google.com
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;142m666973054[0m 0ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;142m666973054[0m 1ms] router: sniffed protocol: tls, domain: ogs.google.com
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;142m666973054[0m 1ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;142m666973054[0m 2ms] outbound/vless[🇺🇸 racknerd]: outbound connection to ogs.google.com:443
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;142m666973054[0m 2ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;142m666973054[0m 2ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:07:01 [37mDEBUG[0m router: found fakeip domain: www.gstatic.com
++0800 2026-01-23 23:07:01 [37mDEBUG[0m router: found fakeip domain: www.google.com
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;68m1503473716[0m 21.38s] dns: exchange lh3.googleusercontent.com. IN A
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;131m2495799923[0m 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:51298
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;131m2495799923[0m 0ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;29m674373389[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:3014
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;29m674373389[0m 0ms] inbound/tun[tun-in]: inbound connection to 198.18.0.23:443
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;29m674373389[0m 0ms] router: found fakeip domain: www.gstatic.com
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;29m674373389[0m 1ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;115m2639520611[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:8148
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;115m2639520611[0m 2ms] inbound/tun[tun-in]: inbound connection to 198.18.0.13:443
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;115m2639520611[0m 2ms] router: found fakeip domain: www.google.com
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;115m2639520611[0m 2ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;115m2639520611[0m 3ms] router: sniffed protocol: tls, domain: www.google.com
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;115m2639520611[0m 3ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;131m2495799923[0m 0ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;131m2495799923[0m 3ms] router: sniffed packet protocol: dns
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;131m2495799923[0m 3ms] router: match[2] port=53 || protocol=dns => hijack-dns
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;131m2495799923[0m 4ms] dns: exchange www.googletagmanager.com. IN A
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;115m2639520611[0m 3ms] outbound/vless[🇺🇸 racknerd]: outbound connection to www.google.com:443
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;115m2639520611[0m 5ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;115m2639520611[0m 5ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;68m1503473716[0m 21.38s] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;68m1503473716[0m 21.39s] dns: exchanged lh3.googleusercontent.com NOERROR 1
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;68m1503473716[0m 21.39s] dns: exchanged A lh3.googleusercontent.com. 1 IN A 198.18.0.25
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;139m2386863483[0m 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:64086
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;139m2386863483[0m 4ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;139m2386863483[0m 4ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;139m2386863483[0m 4ms] router: sniffed packet protocol: dns
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;139m2386863483[0m 4ms] router: match[2] port=53 || protocol=dns => hijack-dns
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;139m2386863483[0m 5ms] dns: exchange ogads-pa.clients6.google.com. IN A
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;139m2386863483[0m 5ms] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;139m2386863483[0m 6ms] dns: exchanged ogads-pa.clients6.google.com NOERROR 1
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;139m2386863483[0m 6ms] dns: exchanged A ogads-pa.clients6.google.com. 1 IN A 198.18.0.14
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;29m674373389[0m 1ms] router: sniffed protocol: tls, domain: www.gstatic.com
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;29m674373389[0m 8ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;29m674373389[0m 8ms] outbound/vless[🇺🇸 racknerd]: outbound connection to www.gstatic.com:443
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;29m674373389[0m 8ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;131m2495799923[0m 4ms] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;131m2495799923[0m 8ms] dns: exchanged www.googletagmanager.com NOERROR 1
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;131m2495799923[0m 9ms] dns: exchanged A www.googletagmanager.com. 1 IN A 198.18.0.43
++0800 2026-01-23 23:07:01 [37mDEBUG[0m router: found fakeip domain: lh3.googleusercontent.com
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;29m674373389[0m 8ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:07:01 [37mDEBUG[0m router: found fakeip domain: ogads-pa.clients6.google.com
++0800 2026-01-23 23:07:01 [37mDEBUG[0m router: found fakeip domain: www.googletagmanager.com
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;107m102827355[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:2855
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;107m102827355[0m 0ms] inbound/tun[tun-in]: inbound connection to 198.18.0.25:443
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;107m102827355[0m 0ms] router: found fakeip domain: lh3.googleusercontent.com
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;107m102827355[0m 0ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;130m3961559922[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:8638
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;130m3961559922[0m 0ms] inbound/tun[tun-in]: inbound connection to 198.18.0.43:443
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;130m3961559922[0m 1ms] router: found fakeip domain: www.googletagmanager.com
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;130m3961559922[0m 1ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;107m102827355[0m 1ms] router: sniffed protocol: tls, domain: lh3.googleusercontent.com
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;107m102827355[0m 2ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;107m102827355[0m 2ms] outbound/vless[🇺🇸 racknerd]: outbound connection to lh3.googleusercontent.com:443
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;107m102827355[0m 3ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;107m102827355[0m 3ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;104m1578579288[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:9700
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;104m1578579288[0m 3ms] inbound/tun[tun-in]: inbound connection to 198.18.0.14:443
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;104m1578579288[0m 4ms] router: found fakeip domain: ogads-pa.clients6.google.com
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;104m1578579288[0m 4ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;130m3961559922[0m 1ms] router: sniffed protocol: tls, domain: www.googletagmanager.com
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;130m3961559922[0m 4ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;130m3961559922[0m 4ms] outbound/vless[🇺🇸 racknerd]: outbound connection to www.googletagmanager.com:443
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;130m3961559922[0m 4ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;130m3961559922[0m 4ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;104m1578579288[0m 4ms] router: sniffed protocol: tls, domain: ogads-pa.clients6.google.com
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;104m1578579288[0m 5ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;104m1578579288[0m 5ms] outbound/vless[🇺🇸 racknerd]: outbound connection to ogads-pa.clients6.google.com:443
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;104m1578579288[0m 6ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;104m1578579288[0m 6ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;68m1503473716[0m 21.60s] dns: exchange settings-win.data.microsoft.com. IN A
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;68m1503473716[0m 21.60s] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;68m1503473716[0m 21.61s] dns: exchanged settings-win.data.microsoft.com NOERROR 1
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;68m1503473716[0m 21.61s] dns: exchanged A settings-win.data.microsoft.com. 1 IN A 198.18.0.5
++0800 2026-01-23 23:07:01 [37mDEBUG[0m router: found fakeip domain: settings-win.data.microsoft.com
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;137m2851577465[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:8643
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;137m2851577465[0m 0ms] inbound/tun[tun-in]: inbound connection to 198.18.0.5:443
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;137m2851577465[0m 1ms] router: found fakeip domain: settings-win.data.microsoft.com
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;137m2851577465[0m 2ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;137m2851577465[0m 2ms] router: sniffed protocol: tls, domain: settings-win.data.microsoft.com
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;137m2851577465[0m 2ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;137m2851577465[0m 3ms] outbound/vless[🇺🇸 racknerd]: outbound connection to settings-win.data.microsoft.com:443
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;137m2851577465[0m 3ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;137m2851577465[0m 3ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;142m666973054[0m 371ms] outbound/vless[🇺🇸 racknerd]: outbound connection to ogs.google.com:443
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;115m2639520611[0m 375ms] outbound/vless[🇺🇸 racknerd]: outbound connection to www.google.com:443
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;130m3961559922[0m 371ms] outbound/vless[🇺🇸 racknerd]: outbound connection to www.googletagmanager.com:443
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;104m1578579288[0m 373ms] outbound/vless[🇺🇸 racknerd]: outbound connection to ogads-pa.clients6.google.com:443
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;29m674373389[0m 391ms] outbound/vless[🇺🇸 racknerd]: outbound connection to www.gstatic.com:443
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;107m102827355[0m 396ms] outbound/vless[🇺🇸 racknerd]: outbound connection to lh3.googleusercontent.com:443
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;139m2386863483[0m 796ms] dns: exchange csp.withgoogle.com. IN A
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;139m2386863483[0m 796ms] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;139m2386863483[0m 796ms] dns: exchanged csp.withgoogle.com NOERROR 1
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;139m2386863483[0m 797ms] dns: exchanged A csp.withgoogle.com. 1 IN A 198.18.0.44
++0800 2026-01-23 23:07:01 [37mDEBUG[0m router: found fakeip domain: csp.withgoogle.com
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;157m2949606797[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:3524
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;157m2949606797[0m 0ms] inbound/tun[tun-in]: inbound connection to 198.18.0.44:443
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;157m2949606797[0m 1ms] router: found fakeip domain: csp.withgoogle.com
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;157m2949606797[0m 1ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;157m2949606797[0m 2ms] router: sniffed protocol: tls, domain: csp.withgoogle.com
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;157m2949606797[0m 2ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;157m2949606797[0m 2ms] outbound/vless[🇺🇸 racknerd]: outbound connection to csp.withgoogle.com:443
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;157m2949606797[0m 2ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:07:01 [37mDEBUG[0m [[38;5;157m2949606797[0m 2ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:07:01 [36mINFO[0m [[38;5;137m2851577465[0m 607ms] outbound/vless[🇺🇸 racknerd]: outbound connection to settings-win.data.microsoft.com:443
++0800 2026-01-23 23:07:02 [37mDEBUG[0m [[38;5;131m2495799923[0m 1.7s] dns: exchange csp.withgoogle.com. IN A
++0800 2026-01-23 23:07:02 [37mDEBUG[0m [[38;5;131m2495799923[0m 1.7s] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:07:02 [37mDEBUG[0m [[38;5;131m2495799923[0m 1.7s] dns: exchanged csp.withgoogle.com NOERROR 1
++0800 2026-01-23 23:07:02 [36mINFO[0m [[38;5;131m2495799923[0m 1.7s] dns: exchanged A csp.withgoogle.com. 1 IN A 198.18.0.44
++0800 2026-01-23 23:07:02 [37mDEBUG[0m router: found fakeip domain: csp.withgoogle.com
++0800 2026-01-23 23:07:02 [36mINFO[0m [[38;5;227m2545007827[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:7001
++0800 2026-01-23 23:07:02 [36mINFO[0m [[38;5;227m2545007827[0m 0ms] inbound/tun[tun-in]: inbound connection to 198.18.0.44:443
++0800 2026-01-23 23:07:02 [37mDEBUG[0m [[38;5;68m1503473716[0m 22.46s] dns: exchange ssl.gstatic.com. IN A
++0800 2026-01-23 23:07:02 [37mDEBUG[0m [[38;5;227m2545007827[0m 1ms] router: found fakeip domain: csp.withgoogle.com
++0800 2026-01-23 23:07:02 [37mDEBUG[0m [[38;5;227m2545007827[0m 2ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:07:02 [37mDEBUG[0m [[38;5;68m1503473716[0m 22.47s] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:07:02 [37mDEBUG[0m [[38;5;227m2545007827[0m 3ms] router: sniffed protocol: tls, domain: csp.withgoogle.com
++0800 2026-01-23 23:07:02 [37mDEBUG[0m [[38;5;68m1503473716[0m 22.47s] dns: exchanged ssl.gstatic.com NOERROR 1
++0800 2026-01-23 23:07:02 [36mINFO[0m [[38;5;68m1503473716[0m 22.47s] dns: exchanged A ssl.gstatic.com. 1 IN A 198.18.0.24
++0800 2026-01-23 23:07:02 [37mDEBUG[0m [[38;5;227m2545007827[0m 3ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:07:02 [36mINFO[0m [[38;5;227m2545007827[0m 5ms] outbound/vless[🇺🇸 racknerd]: outbound connection to csp.withgoogle.com:443
++0800 2026-01-23 23:07:02 [37mDEBUG[0m [[38;5;227m2545007827[0m 6ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:07:02 [37mDEBUG[0m [[38;5;227m2545007827[0m 7ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:07:02 [37mDEBUG[0m router: found fakeip domain: ssl.gstatic.com
++0800 2026-01-23 23:07:02 [36mINFO[0m [[38;5;193m2390542077[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:10061
++0800 2026-01-23 23:07:02 [36mINFO[0m [[38;5;193m2390542077[0m 0ms] inbound/tun[tun-in]: inbound connection to 198.18.0.24:443
++0800 2026-01-23 23:07:02 [37mDEBUG[0m [[38;5;193m2390542077[0m 0ms] router: found fakeip domain: ssl.gstatic.com
++0800 2026-01-23 23:07:02 [37mDEBUG[0m [[38;5;193m2390542077[0m 1ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:07:02 [37mDEBUG[0m [[38;5;193m2390542077[0m 2ms] router: sniffed protocol: tls, domain: ssl.gstatic.com
++0800 2026-01-23 23:07:02 [37mDEBUG[0m [[38;5;193m2390542077[0m 3ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:07:02 [36mINFO[0m [[38;5;193m2390542077[0m 3ms] outbound/vless[🇺🇸 racknerd]: outbound connection to ssl.gstatic.com:443
++0800 2026-01-23 23:07:02 [37mDEBUG[0m [[38;5;193m2390542077[0m 3ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:07:02 [37mDEBUG[0m [[38;5;193m2390542077[0m 4ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:07:02 [36mINFO[0m [[38;5;157m2949606797[0m 411ms] outbound/vless[🇺🇸 racknerd]: outbound connection to csp.withgoogle.com:443
++0800 2026-01-23 23:07:02 [37mDEBUG[0m [[38;5;139m2386863483[0m 1.77s] dns: exchange www.gstatic.com. IN A
++0800 2026-01-23 23:07:02 [37mDEBUG[0m [[38;5;139m2386863483[0m 1.77s] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:07:02 [37mDEBUG[0m [[38;5;139m2386863483[0m 1.77s] dns: exchanged www.gstatic.com NOERROR 1
++0800 2026-01-23 23:07:02 [36mINFO[0m [[38;5;139m2386863483[0m 1.78s] dns: exchanged A www.gstatic.com. 1 IN A 198.18.0.23
++0800 2026-01-23 23:07:02 [37mDEBUG[0m router: found fakeip domain: www.gstatic.com
++0800 2026-01-23 23:07:02 [36mINFO[0m [[38;5;202m2857482170[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:5665
++0800 2026-01-23 23:07:02 [36mINFO[0m [[38;5;202m2857482170[0m 0ms] inbound/tun[tun-in]: inbound connection to 198.18.0.23:443
++0800 2026-01-23 23:07:02 [37mDEBUG[0m [[38;5;202m2857482170[0m 0ms] router: found fakeip domain: www.gstatic.com
++0800 2026-01-23 23:07:02 [37mDEBUG[0m [[38;5;202m2857482170[0m 1ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:07:02 [37mDEBUG[0m [[38;5;202m2857482170[0m 1ms] router: sniffed protocol: tls, domain: www.gstatic.com
++0800 2026-01-23 23:07:02 [37mDEBUG[0m [[38;5;202m2857482170[0m 1ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:07:02 [36mINFO[0m [[38;5;202m2857482170[0m 2ms] outbound/vless[🇺🇸 racknerd]: outbound connection to www.gstatic.com:443
++0800 2026-01-23 23:07:02 [37mDEBUG[0m [[38;5;202m2857482170[0m 2ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:07:02 [37mDEBUG[0m [[38;5;202m2857482170[0m 2ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:07:03 [36mINFO[0m [[38;5;202m2857482170[0m 369ms] outbound/vless[🇺🇸 racknerd]: outbound connection to www.gstatic.com:443
++0800 2026-01-23 23:07:03 [37mDEBUG[0m [[38;5;137m2851577465[0m 2.4s] connection: connection upload finished
++0800 2026-01-23 23:07:03 [37mDEBUG[0m [[38;5;131m2495799923[0m 2.38s] dns: exchange settings-win.data.microsoft.com. IN A
++0800 2026-01-23 23:07:03 [37mDEBUG[0m [[38;5;131m2495799923[0m 2.38s] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:07:03 [37mDEBUG[0m [[38;5;131m2495799923[0m 2.38s] dns: exchanged settings-win.data.microsoft.com NOERROR 1
++0800 2026-01-23 23:07:03 [36mINFO[0m [[38;5;131m2495799923[0m 2.38s] dns: exchanged A settings-win.data.microsoft.com. 1 IN A 198.18.0.5
++0800 2026-01-23 23:07:03 [37mDEBUG[0m router: found fakeip domain: settings-win.data.microsoft.com
++0800 2026-01-23 23:07:03 [36mINFO[0m [[38;5;221m534100449[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:5667
++0800 2026-01-23 23:07:03 [36mINFO[0m [[38;5;221m534100449[0m 0ms] inbound/tun[tun-in]: inbound connection to 198.18.0.5:443
++0800 2026-01-23 23:07:03 [37mDEBUG[0m [[38;5;221m534100449[0m 0ms] router: found fakeip domain: settings-win.data.microsoft.com
++0800 2026-01-23 23:07:03 [37mDEBUG[0m [[38;5;221m534100449[0m 1ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:07:03 [37mDEBUG[0m [[38;5;221m534100449[0m 1ms] router: sniffed protocol: tls, domain: settings-win.data.microsoft.com
++0800 2026-01-23 23:07:03 [37mDEBUG[0m [[38;5;221m534100449[0m 2ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:07:03 [36mINFO[0m [[38;5;221m534100449[0m 2ms] outbound/vless[🇺🇸 racknerd]: outbound connection to settings-win.data.microsoft.com:443
++0800 2026-01-23 23:07:03 [37mDEBUG[0m [[38;5;221m534100449[0m 2ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:07:03 [37mDEBUG[0m [[38;5;221m534100449[0m 3ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:07:03 [36mINFO[0m [[38;5;227m2545007827[0m 1.38s] outbound/vless[🇺🇸 racknerd]: outbound connection to csp.withgoogle.com:443
++0800 2026-01-23 23:07:03 [36mINFO[0m [[38;5;193m2390542077[0m 1.61s] outbound/vless[🇺🇸 racknerd]: outbound connection to ssl.gstatic.com:443
++0800 2026-01-23 23:07:04 [37mDEBUG[0m router: found fakeip domain: www.gstatic.com
++0800 2026-01-23 23:07:04 [36mINFO[0m [[38;5;122m296776810[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:14529
++0800 2026-01-23 23:07:04 [36mINFO[0m [[38;5;122m296776810[0m 0ms] inbound/tun[tun-in]: inbound connection to 198.18.0.23:443
++0800 2026-01-23 23:07:04 [37mDEBUG[0m [[38;5;122m296776810[0m 1ms] router: found fakeip domain: www.gstatic.com
++0800 2026-01-23 23:07:04 [37mDEBUG[0m [[38;5;122m296776810[0m 1ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:07:04 [37mDEBUG[0m [[38;5;122m296776810[0m 2ms] router: sniffed protocol: tls, domain: www.gstatic.com
++0800 2026-01-23 23:07:04 [37mDEBUG[0m [[38;5;122m296776810[0m 3ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:07:04 [36mINFO[0m [[38;5;122m296776810[0m 3ms] outbound/vless[🇺🇸 racknerd]: outbound connection to www.gstatic.com:443
++0800 2026-01-23 23:07:04 [37mDEBUG[0m [[38;5;122m296776810[0m 3ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:07:04 [37mDEBUG[0m [[38;5;122m296776810[0m 4ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:07:04 [36mINFO[0m [[38;5;221m534100449[0m 1.4s] outbound/vless[🇺🇸 racknerd]: outbound connection to settings-win.data.microsoft.com:443
++0800 2026-01-23 23:07:05 [37mDEBUG[0m router: found fakeip domain: clients4.google.com
++0800 2026-01-23 23:07:05 [36mINFO[0m [[38;5;48m4269533431[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:10423
++0800 2026-01-23 23:07:05 [36mINFO[0m [[38;5;48m4269533431[0m 0ms] inbound/tun[tun-in]: inbound connection to 198.18.0.36:443
++0800 2026-01-23 23:07:05 [37mDEBUG[0m [[38;5;48m4269533431[0m 0ms] router: found fakeip domain: clients4.google.com
++0800 2026-01-23 23:07:05 [37mDEBUG[0m [[38;5;48m4269533431[0m 0ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:07:05 [37mDEBUG[0m [[38;5;48m4269533431[0m 0ms] router: sniffed protocol: tls, domain: clients4.google.com
++0800 2026-01-23 23:07:05 [37mDEBUG[0m [[38;5;48m4269533431[0m 0ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:07:05 [36mINFO[0m [[38;5;48m4269533431[0m 1ms] outbound/vless[🇺🇸 racknerd]: outbound connection to clients4.google.com:443
++0800 2026-01-23 23:07:05 [37mDEBUG[0m [[38;5;48m4269533431[0m 1ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:07:05 [37mDEBUG[0m [[38;5;48m4269533431[0m 1ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:07:05 [36mINFO[0m [[38;5;122m296776810[0m 1.9s] outbound/vless[🇺🇸 racknerd]: outbound connection to www.gstatic.com:443
++0800 2026-01-23 23:07:05 [36mINFO[0m [[38;5;48m4269533431[0m 623ms] outbound/vless[🇺🇸 racknerd]: outbound connection to clients4.google.com:443
++0800 2026-01-23 23:07:05 [37mDEBUG[0m [[38;5;221m534100449[0m 2.48s] connection: connection upload finished
++0800 2026-01-23 23:07:11 [37mDEBUG[0m [[38;5;115m2639520611[0m 10.64s] connection: connection download finished
++0800 2026-01-23 23:07:13 [37mDEBUG[0m [[38;5;68m1503473716[0m 34.32s] dns: exchange ipv6.msftconnecttest.com. IN A
++0800 2026-01-23 23:07:13 [37mDEBUG[0m [[38;5;68m1503473716[0m 34.32s] dns: match[9] rule_set=geosite-fakeipfilter => route(dns_local)
++0800 2026-01-23 23:07:13 [37mDEBUG[0m [[38;5;68m1503473716[0m 34.32s] dns: cached ipv6.msftconnecttest.com NOERROR 108
++0800 2026-01-23 23:07:13 [36mINFO[0m [[38;5;68m1503473716[0m 34.32s] dns: cached CNAME ipv6.msftconnecttest.com. 108 IN CNAME ncsiv6-geo.trafficmanager.net.
++0800 2026-01-23 23:07:13 [36mINFO[0m [[38;5;68m1503473716[0m 34.32s] dns: cached CNAME ncsiv6-geo.trafficmanager.net. 108 IN CNAME ipv6.msftconnecttest.com.edgesuite.net.
++0800 2026-01-23 23:07:13 [36mINFO[0m [[38;5;68m1503473716[0m 34.32s] dns: cached CNAME ipv6.msftconnecttest.com.edgesuite.net. 108 IN CNAME a1968.i6g1.akamai.net.
++0800 2026-01-23 23:07:13 [36mINFO[0m [[38;5;68m1503473716[0m 34.32s] dns: cached SOA i6g1.akamai.net. 108 IN SOA n0i6g1.akamai.net. hostmaster.akamai.com. 1769180341 1000 1000 1000 1800
++0800 2026-01-23 23:07:14 [36mINFO[0m [[38;5;40m3272459503[0m 0ms] inbound/tun[tun-in]: inbound packet connection from 172.19.0.1:63991
++0800 2026-01-23 23:07:14 [36mINFO[0m [[38;5;40m3272459503[0m 3ms] inbound/tun[tun-in]: inbound packet connection to 172.19.0.2:53
++0800 2026-01-23 23:07:14 [37mDEBUG[0m [[38;5;40m3272459503[0m 3ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:07:14 [37mDEBUG[0m [[38;5;40m3272459503[0m 3ms] router: sniffed packet protocol: dns
++0800 2026-01-23 23:07:14 [37mDEBUG[0m [[38;5;40m3272459503[0m 4ms] router: match[2] port=53 || protocol=dns => hijack-dns
++0800 2026-01-23 23:07:14 [37mDEBUG[0m [[38;5;40m3272459503[0m 4ms] dns: exchange dns.msftncsi.com. IN AAAA
++0800 2026-01-23 23:07:14 [37mDEBUG[0m [[38;5;40m3272459503[0m 5ms] dns: match[9] rule_set=geosite-fakeipfilter => route(dns_local)
++0800 2026-01-23 23:07:14 [37mDEBUG[0m [[38;5;40m3272459503[0m 5ms] dns: strategy rejected
++0800 2026-01-23 23:07:15 [37mDEBUG[0m [[38;5;40m3272459503[0m 517ms] dns: exchange ipv6.msftconnecttest.com. IN A
++0800 2026-01-23 23:07:15 [37mDEBUG[0m [[38;5;139m2386863483[0m 14.8s] dns: exchange ipv6.msftconnecttest.com. IN A
++0800 2026-01-23 23:07:15 [37mDEBUG[0m [[38;5;139m2386863483[0m 14.8s] dns: match[9] rule_set=geosite-fakeipfilter => route(dns_local)
++0800 2026-01-23 23:07:15 [37mDEBUG[0m [[38;5;139m2386863483[0m 14.8s] dns: cached ipv6.msftconnecttest.com NOERROR 107
++0800 2026-01-23 23:07:15 [36mINFO[0m [[38;5;139m2386863483[0m 14.8s] dns: cached CNAME ipv6.msftconnecttest.com. 107 IN CNAME ncsiv6-geo.trafficmanager.net.
++0800 2026-01-23 23:07:15 [36mINFO[0m [[38;5;139m2386863483[0m 14.8s] dns: cached CNAME ncsiv6-geo.trafficmanager.net. 107 IN CNAME ipv6.msftconnecttest.com.edgesuite.net.
++0800 2026-01-23 23:07:15 [36mINFO[0m [[38;5;139m2386863483[0m 14.8s] dns: cached CNAME ipv6.msftconnecttest.com.edgesuite.net. 107 IN CNAME a1968.i6g1.akamai.net.
++0800 2026-01-23 23:07:15 [36mINFO[0m [[38;5;139m2386863483[0m 14.8s] dns: cached SOA i6g1.akamai.net. 107 IN SOA n0i6g1.akamai.net. hostmaster.akamai.com. 1769180341 1000 1000 1000 1800
++0800 2026-01-23 23:07:15 [37mDEBUG[0m [[38;5;40m3272459503[0m 518ms] dns: match[9] rule_set=geosite-fakeipfilter => route(dns_local)
++0800 2026-01-23 23:07:15 [37mDEBUG[0m [[38;5;40m3272459503[0m 520ms] dns: cached ipv6.msftconnecttest.com NOERROR 107
++0800 2026-01-23 23:07:15 [36mINFO[0m [[38;5;40m3272459503[0m 521ms] dns: cached CNAME ipv6.msftconnecttest.com. 107 IN CNAME ncsiv6-geo.trafficmanager.net.
++0800 2026-01-23 23:07:15 [36mINFO[0m [[38;5;40m3272459503[0m 521ms] dns: cached CNAME ncsiv6-geo.trafficmanager.net. 107 IN CNAME ipv6.msftconnecttest.com.edgesuite.net.
++0800 2026-01-23 23:07:15 [36mINFO[0m [[38;5;40m3272459503[0m 521ms] dns: cached CNAME ipv6.msftconnecttest.com.edgesuite.net. 107 IN CNAME a1968.i6g1.akamai.net.
++0800 2026-01-23 23:07:15 [36mINFO[0m [[38;5;40m3272459503[0m 521ms] dns: cached SOA i6g1.akamai.net. 107 IN SOA n0i6g1.akamai.net. hostmaster.akamai.com. 1769180341 1000 1000 1000 1800
++0800 2026-01-23 23:07:18 [37mDEBUG[0m [[38;5;131m2495799923[0m 17.39s] dns: exchange daily-cloudcode-pa.googleapis.com. IN A
++0800 2026-01-23 23:07:18 [37mDEBUG[0m [[38;5;131m2495799923[0m 17.39s] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:07:18 [37mDEBUG[0m [[38;5;131m2495799923[0m 17.39s] dns: exchanged daily-cloudcode-pa.googleapis.com NOERROR 1
++0800 2026-01-23 23:07:18 [36mINFO[0m [[38;5;131m2495799923[0m 17.39s] dns: exchanged A daily-cloudcode-pa.googleapis.com. 1 IN A 198.18.0.33
++0800 2026-01-23 23:07:18 [37mDEBUG[0m router: found fakeip domain: daily-cloudcode-pa.googleapis.com
++0800 2026-01-23 23:07:18 [37mDEBUG[0m router: found fakeip domain: daily-cloudcode-pa.googleapis.com
++0800 2026-01-23 23:07:18 [36mINFO[0m [[38;5;176m2547165600[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:10453
++0800 2026-01-23 23:07:18 [36mINFO[0m [[38;5;138m1978941818[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:10454
++0800 2026-01-23 23:07:18 [36mINFO[0m [[38;5;138m1978941818[0m 0ms] inbound/tun[tun-in]: inbound connection to 198.18.0.33:443
++0800 2026-01-23 23:07:18 [37mDEBUG[0m [[38;5;138m1978941818[0m 0ms] router: found fakeip domain: daily-cloudcode-pa.googleapis.com
++0800 2026-01-23 23:07:18 [37mDEBUG[0m [[38;5;138m1978941818[0m 0ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:07:18 [37mDEBUG[0m [[38;5;138m1978941818[0m 1ms] router: sniffed protocol: tls, domain: daily-cloudcode-pa.googleapis.com
++0800 2026-01-23 23:07:18 [37mDEBUG[0m [[38;5;138m1978941818[0m 2ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:07:18 [36mINFO[0m [[38;5;138m1978941818[0m 2ms] outbound/vless[🇺🇸 racknerd]: outbound connection to daily-cloudcode-pa.googleapis.com:443
++0800 2026-01-23 23:07:18 [36mINFO[0m [[38;5;176m2547165600[0m 0ms] inbound/tun[tun-in]: inbound connection to 198.18.0.33:443
++0800 2026-01-23 23:07:18 [37mDEBUG[0m [[38;5;176m2547165600[0m 4ms] router: found fakeip domain: daily-cloudcode-pa.googleapis.com
++0800 2026-01-23 23:07:18 [37mDEBUG[0m [[38;5;176m2547165600[0m 6ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:07:18 [37mDEBUG[0m [[38;5;138m1978941818[0m 3ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:07:18 [37mDEBUG[0m [[38;5;138m1978941818[0m 6ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:07:18 [37mDEBUG[0m [[38;5;176m2547165600[0m 6ms] router: sniffed protocol: tls, domain: daily-cloudcode-pa.googleapis.com
++0800 2026-01-23 23:07:18 [37mDEBUG[0m [[38;5;176m2547165600[0m 8ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:07:18 [36mINFO[0m [[38;5;176m2547165600[0m 8ms] outbound/vless[🇺🇸 racknerd]: outbound connection to daily-cloudcode-pa.googleapis.com:443
++0800 2026-01-23 23:07:18 [37mDEBUG[0m [[38;5;176m2547165600[0m 8ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:07:18 [37mDEBUG[0m [[38;5;176m2547165600[0m 9ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:07:18 [37mDEBUG[0m [[38;5;68m1503473716[0m 39.0s] dns: exchange play.googleapis.com. IN A
++0800 2026-01-23 23:07:18 [37mDEBUG[0m [[38;5;68m1503473716[0m 39.1s] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:07:18 [37mDEBUG[0m [[38;5;68m1503473716[0m 39.1s] dns: exchanged play.googleapis.com NOERROR 1
++0800 2026-01-23 23:07:18 [36mINFO[0m [[38;5;68m1503473716[0m 39.1s] dns: exchanged A play.googleapis.com. 1 IN A 198.18.0.40
++0800 2026-01-23 23:07:18 [37mDEBUG[0m router: found fakeip domain: play.googleapis.com
++0800 2026-01-23 23:07:18 [36mINFO[0m [[38;5;83m1871216020[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:10457
++0800 2026-01-23 23:07:18 [36mINFO[0m [[38;5;83m1871216020[0m 0ms] inbound/tun[tun-in]: inbound connection to 198.18.0.40:443
++0800 2026-01-23 23:07:18 [37mDEBUG[0m [[38;5;83m1871216020[0m 1ms] router: found fakeip domain: play.googleapis.com
++0800 2026-01-23 23:07:18 [37mDEBUG[0m [[38;5;83m1871216020[0m 1ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:07:18 [37mDEBUG[0m [[38;5;83m1871216020[0m 1ms] router: sniffed protocol: tls, domain: play.googleapis.com
++0800 2026-01-23 23:07:18 [37mDEBUG[0m [[38;5;83m1871216020[0m 1ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:07:18 [36mINFO[0m [[38;5;83m1871216020[0m 2ms] outbound/vless[🇺🇸 racknerd]: outbound connection to play.googleapis.com:443
++0800 2026-01-23 23:07:18 [37mDEBUG[0m [[38;5;83m1871216020[0m 2ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:07:18 [37mDEBUG[0m [[38;5;83m1871216020[0m 2ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100
++0800 2026-01-23 23:07:18 [36mINFO[0m [[38;5;138m1978941818[0m 525ms] outbound/vless[🇺🇸 racknerd]: outbound connection to daily-cloudcode-pa.googleapis.com:443
++0800 2026-01-23 23:07:19 [36mINFO[0m [[38;5;176m2547165600[0m 820ms] outbound/vless[🇺🇸 racknerd]: outbound connection to daily-cloudcode-pa.googleapis.com:443
++0800 2026-01-23 23:07:19 [36mINFO[0m [[38;5;83m1871216020[0m 902ms] outbound/vless[🇺🇸 racknerd]: outbound connection to play.googleapis.com:443
++0800 2026-01-23 23:07:20 [37mDEBUG[0m [[38;5;139m2386863483[0m 19.11s] dns: exchange browser.events.data.microsoft.com. IN A
++0800 2026-01-23 23:07:20 [37mDEBUG[0m [[38;5;139m2386863483[0m 19.11s] dns: match[13] query_type=A => route(dns_fakeip,rewrite-ttl=1)
++0800 2026-01-23 23:07:20 [37mDEBUG[0m [[38;5;139m2386863483[0m 19.12s] dns: exchanged browser.events.data.microsoft.com NOERROR 1
++0800 2026-01-23 23:07:20 [36mINFO[0m [[38;5;139m2386863483[0m 19.12s] dns: exchanged A browser.events.data.microsoft.com. 1 IN A 198.18.0.34
++0800 2026-01-23 23:07:20 [37mDEBUG[0m router: found fakeip domain: browser.events.data.microsoft.com
++0800 2026-01-23 23:07:20 [36mINFO[0m [[38;5;113m1666008673[0m 0ms] inbound/tun[tun-in]: inbound connection from 172.19.0.1:10461
++0800 2026-01-23 23:07:20 [36mINFO[0m [[38;5;113m1666008673[0m 0ms] inbound/tun[tun-in]: inbound connection to 198.18.0.34:443
++0800 2026-01-23 23:07:20 [37mDEBUG[0m [[38;5;113m1666008673[0m 1ms] router: found fakeip domain: browser.events.data.microsoft.com
++0800 2026-01-23 23:07:20 [37mDEBUG[0m [[38;5;113m1666008673[0m 1ms] router: match[1] => sniff(http,tls,dns)
++0800 2026-01-23 23:07:20 [37mDEBUG[0m [[38;5;113m1666008673[0m 2ms] router: sniffed protocol: tls, domain: browser.events.data.microsoft.com
++0800 2026-01-23 23:07:20 [37mDEBUG[0m [[38;5;113m1666008673[0m 2ms] router: match[12] rule_set=geosite_geolocation-!cn => route(PROXY)
++0800 2026-01-23 23:07:20 [36mINFO[0m [[38;5;113m1666008673[0m 5ms] outbound/vless[🇺🇸 racknerd]: outbound connection to browser.events.data.microsoft.com:443
++0800 2026-01-23 23:07:20 [37mDEBUG[0m [[38;5;113m1666008673[0m 6ms] dns: lookup domain ponkan.pp.ua
++0800 2026-01-23 23:07:20 [37mDEBUG[0m [[38;5;113m1666008673[0m 7ms] dns: lookup succeed for ponkan.pp.ua: 148.135.101.100

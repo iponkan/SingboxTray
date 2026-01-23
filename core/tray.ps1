@@ -41,8 +41,13 @@ try {
 }
 
 # --- 路径配置 ---
+Set-Location -Path $CurrentDir
+Write-Log "已切换工作目录到: $(Get-Location)"
+
 $SingboxExe   = Join-Path $CurrentDir "sing-box.exe"
 $SingboxConf  = Join-Path $CurrentDir "windows.json"
+$SingboxLog   = Join-Path $CurrentDir "sing-box.log"
+$SingboxErr   = Join-Path $CurrentDir "sing-box.err"
 $WebUIUrl     = "http://127.0.0.1:9090/ui/"
 
 # --- 检查 sing-box.exe ---
@@ -51,8 +56,6 @@ if (-not (Test-Path $SingboxExe)) {
     [System.Windows.Forms.MessageBox]::Show("错误: 'sing-box.exe' 不存在！", "Singbox Tray", "OK", "Error")
     exit
 }
-
-
 
 # --- 函数: 停止服务 ---
 function Stop-Singbox {
@@ -74,9 +77,21 @@ function Start-Singbox {
     
     $existingProcess = Get-Process -Name "sing-box" -ErrorAction SilentlyContinue
     if (-not $existingProcess) {
+        Write-Log "正在启动 sing-box.exe, 参数: run -c $SingboxConf"
         $ArgList = @("run", "-c", "$SingboxConf")
-        Start-Process -FilePath $SingboxExe -ArgumentList $ArgList -WindowStyle Hidden
-        Write-Log "Singbox 进程已启动"
+        # 使用 Start-Process 并在后台重定向输出
+        try {
+            Start-Process -FilePath $SingboxExe -ArgumentList $ArgList -WindowStyle Hidden -WorkingDirectory $CurrentDir -RedirectStandardOutput $SingboxLog -RedirectStandardError $SingboxErr
+            Write-Log "Singbox 启动命令已发出。"
+            Start-Sleep -Seconds 1
+            if (Get-Process -Name "sing-box" -ErrorAction SilentlyContinue) {
+                Write-Log "Singbox 进程已成功运行。"
+            } else {
+                Write-Log "警告: Singbox 进程启动后立即退出，请检查 sing-box.err"
+            }
+        } catch {
+            Write-Log "启动 Singbox 发生错误: $_"
+        }
     } else {
         Write-Log "Singbox 进程已在运行中"
     }
