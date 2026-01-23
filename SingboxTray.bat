@@ -42,7 +42,8 @@ goto MENU
 :INSTALL_SHORTCUT
 cls
 echo [信息] 正在创建桌面快捷方式...
-set "ICON_PATH=%CORE_DIR%\sing-box.exe"
+set "ICON_PATH=%CORE_DIR%\app.png"
+if not exist "%ICON_PATH%" set "ICON_PATH=%CORE_DIR%\sing-box.exe"
 set "LINK_NAME=Singbox Tray"
 REM WorkingDirectory is crucial for the script to find its files
 powershell -Command "$ws = New-Object -ComObject WScript.Shell; $s = $ws.CreateShortcut([System.IO.Path]::Combine([Environment]::GetFolderPath('Desktop'), '%LINK_NAME%.lnk')); $s.TargetPath = '%VBS_LAUNCHER%'; $s.WorkingDirectory = '%CORE_DIR%'; $s.IconLocation = '%ICON_PATH%, 0'; $s.Save()"
@@ -53,7 +54,8 @@ goto MENU
 :AUTOSTART
 cls
 echo [信息] 正在添加程序到开机启动项...
-set "ICON_PATH=%CORE_DIR%\sing-box.exe"
+set "ICON_PATH=%CORE_DIR%\app.png"
+if not exist "%ICON_PATH%" set "ICON_PATH=%CORE_DIR%\sing-box.exe"
 set "STARTUP_DIR=%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup"
 powershell -Command "$ws = New-Object -ComObject WScript.Shell; $s = $ws.CreateShortcut('%STARTUP_DIR%\Singbox_AutoStart.lnk'); $s.TargetPath = '%VBS_LAUNCHER%'; $s.WorkingDirectory = '%CORE_DIR%'; $s.IconLocation = '%ICON_PATH%, 0'; $s.Save()"
 echo [成功] 程序已添加到开机启动文件夹。

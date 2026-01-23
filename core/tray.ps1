@@ -46,6 +46,7 @@ Write-Log "已切换工作目录到: $(Get-Location)"
 
 $SingboxExe   = Join-Path $CurrentDir "sing-box.exe"
 $SingboxConf  = Join-Path $CurrentDir "windows.json"
+$AppIcon      = Join-Path $CurrentDir "app.png"
 $SingboxLog   = Join-Path $CurrentDir "sing-box.log"
 $SingboxErr   = Join-Path $CurrentDir "sing-box.err"
 $WebUIUrl     = "http://127.0.0.1:9090/ui/"
@@ -98,10 +99,21 @@ function Start-Singbox {
 }
 
 # --- 托盘图标设置 ---
-$Icon = [System.Drawing.Icon]::ExtractAssociatedIcon($SingboxExe)
 $NotifyIcon = New-Object System.Windows.Forms.NotifyIcon
-$NotifyIcon.Icon = $Icon
-$NotifyIcon.Text = "Singbox Tray (Debug)"
+if (Test-Path $AppIcon) {
+    try {
+        $Bitmap = [System.Drawing.Bitmap]::FromFile($AppIcon)
+        $IntPtr = $Bitmap.GetHicon()
+        $NotifyIcon.Icon = [System.Drawing.Icon]::FromHandle($IntPtr)
+        Write-Log "已加载自定义图标: $AppIcon"
+    } catch {
+        Write-Log "加载自定义图标失败，改用默认图标"
+        $NotifyIcon.Icon = [System.Drawing.Icon]::ExtractAssociatedIcon($SingboxExe)
+    }
+} else {
+    $NotifyIcon.Icon = [System.Drawing.Icon]::ExtractAssociatedIcon($SingboxExe)
+}
+$NotifyIcon.Text = "Singbox Tray"
 $NotifyIcon.Visible = $true
 
 # --- 右键菜单 ---
