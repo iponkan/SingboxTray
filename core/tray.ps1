@@ -43,7 +43,6 @@ try {
 # --- 路径配置 ---
 $SingboxExe   = Join-Path $CurrentDir "sing-box.exe"
 $SingboxConf  = Join-Path $CurrentDir "windows.json"
-$UrlConfFile  = Join-Path $CurrentDir "url.conf"
 $WebUIUrl     = "http://127.0.0.1:9090/ui/"
 
 # --- 检查 sing-box.exe ---
@@ -53,69 +52,7 @@ if (-not (Test-Path $SingboxExe)) {
     exit
 }
 
-# --- 函数: 更新配置 ---
-function Update-Config {
-    Write-Log "--- 开始执行 Update-Config ---"
-    
-    if (-not (Test-Path $UrlConfFile)) {
-        Write-Log "错误: 找不到 url.conf 文件"
-        [System.Windows.Forms.MessageBox]::Show("未找到 'url.conf'！请先运行 bat 设置链接。", "缺少配置", "OK", "Warning")
-        return
-    }
-    
-    # 读取 URL 并记录详细信息（长度等，排查看不见的字符）
-    $RawUrl = Get-Content $UrlConfFile -ErrorAction SilentlyContinue | Out-String
-    $ConfigUrl = $RawUrl.Trim()
-    
-    Write-Log "读取到的 URL 长度: $($ConfigUrl.Length)"
-    if ($ConfigUrl.Length -gt 5) {
-        Write-Log "URL 前5位: $($ConfigUrl.Substring(0,5))..."
-    } else {
-        Write-Log "URL 似乎为空或过短"
-    }
 
-    if ([string]::IsNullOrWhiteSpace($ConfigUrl)) {
-        Write-Log "错误: URL 为空"
-        return
-    }
-
-    $NotifyIcon.ShowBalloonTip(1000, "Singbox Tray", "正在下载订阅...", [System.Windows.Forms.ToolTipIcon]::Info)
-    
-    try {
-        Write-Log "正在尝试下载... (Timeout: 30s)"
-        # 伪装 User-Agent
-        $UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-        
-        Invoke-WebRequest -Uri $ConfigUrl -OutFile $SingboxConf -UseBasicParsing -UserAgent $UserAgent -TimeoutSec 30
-        
-        # 验证文件
-        if (Test-Path $SingboxConf) {
-            $FileSize = (Get-Item $SingboxConf).Length
-            Write-Log "下载完成。文件大小: $FileSize 字节"
-            
-            if ($FileSize -lt 100) {
-                Write-Log "警告: 文件太小，可能是错误页面"
-                throw "下载的文件太小 ($FileSize bytes)，可能是无效的订阅链接。"
-            }
-            $NotifyIcon.ShowBalloonTip(1000, "Singbox Tray", "订阅更新成功！", [System.Windows.Forms.ToolTipIcon]::Info)
-        } else {
-            throw "下载命令执行完了，但找不到目标文件。"
-        }
-    } catch {
-        # 详细记录错误堆栈
-        Write-Log "!!! 下载失败 !!!"
-        Write-Log "错误信息: $($_.Exception.Message)"
-        if ($_.Exception.InnerException) {
-            Write-Log "内部错误: $($_.Exception.InnerException.Message)"
-        }
-        if ($_.Exception.Response) {
-            Write-Log "HTTP 状态码: $($_.Exception.Response.StatusCode.value__)"
-        }
-        
-        [System.Windows.Forms.MessageBox]::Show("订阅下载失败！`n`n查看 core/debug.log 获取详情。", "更新失败", "OK", "Error")
-    }
-    Write-Log "--- Update-Config 结束 ---"
-}
 
 # --- 函数: 停止服务 ---
 function Stop-Singbox {
@@ -131,7 +68,7 @@ function Start-Singbox {
     Write-Log "尝试启动 Singbox..."
     if (-not (Test-Path $SingboxConf)) {
         Write-Log "无法启动: 缺少 windows.json"
-        $NotifyIcon.ShowBalloonTip(3000, "Singbox Tray", "等待配置文件... 请右键更新。", [System.Windows.Forms.ToolTipIcon]::Warning)
+        $NotifyIcon.ShowBalloonTip(3000, "Singbox Tray", "缺少配置文件！请将 windows.json 放入 core 目录。", [System.Windows.Forms.ToolTipIcon]::Warning)
         return 
     }
     
@@ -160,13 +97,7 @@ $MenuItemOpenUI.Add_Click({ Start-Process $WebUIUrl })
 
 $ContextMenu.Items.Add("-") | Out-Null
 
-$MenuItemUpdate = $ContextMenu.Items.Add("更新订阅并重启")
-$MenuItemUpdate.Add_Click({
-    Write-Log "用户点击了: 更新订阅并重启"
-    Stop-Singbox
-    Update-Config
-    Start-Singbox
-})
+
 
 $MenuItemRestart = $ContextMenu.Items.Add("仅重启服务")
 $MenuItemRestart.Add_Click({
@@ -193,10 +124,10 @@ $NotifyIcon.Add_DoubleClick({ Start-Process $WebUIUrl })
 Stop-Singbox
 
 if (-not (Test-Path $SingboxConf)) {
-    Write-Log "主流程: 配置文件不存在，尝试下载"
-    Update-Config
+    Write-Log "主流程: 配置文件不存在，请确保 $SingboxConf 存在"
+    $NotifyIcon.ShowBalloonTip(3000, "Singbox Tray", "找不到配置文件 windows.json！", [System.Windows.Forms.ToolTipIcon]::Error)
 } else {
-    Write-Log "主流程: 配置文件已存在，跳过自动下载"
+    Write-Log "主流程: 配置文件已存在"
 }
 
 Start-Singbox

@@ -16,7 +16,7 @@ echo =================================================
 echo              Singbox Tray - 初始化
 echo =================================================
 echo.
-echo    [1] 设置订阅链接
+echo    [1] 启动 Singbox (托盘模式)
 echo    [2] 创建桌面快捷方式
 echo    [3] 添加到开机自启
 echo.
@@ -25,29 +25,17 @@ echo.
 echo =================================================
 set /p choice=请输入选项: 
 
-if "%choice%"=="1" goto SET_URL
+if "%choice%"=="1" goto START_SINGBOX
 if "%choice%"=="2" goto INSTALL_SHORTCUT
 if "%choice%"=="3" goto AUTOSTART
 if "%choice%"=="0" exit
 goto MENU
 
-:SET_URL
+:START_SINGBOX
 cls
-echo =================================================
-echo                 设置订阅链接
-echo =================================================
-echo.
-echo  请输入您的 Singbox 订阅链接:
-echo.
-set /p "URL="
-if defined URL (
-    echo !URL! > "%CORE_DIR%\url.conf"
-    echo.
-    echo [成功] 订阅链接已保存。
-) else (
-    echo.
-    echo [取消] 未输入链接，操作已取消。
-)
+echo [信息] 正在启动 Singbox...
+start "" "%VBS_LAUNCHER%"
+echo [成功] Singbox 已在后台启动。
 pause
 goto MENU
 
