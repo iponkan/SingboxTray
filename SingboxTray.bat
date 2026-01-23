@@ -42,7 +42,8 @@ goto MENU
 :INSTALL_SHORTCUT
 cls
 echo [信息] 正在创建桌面快捷方式...
-set "ICON_PATH=%CORE_DIR%\app.png"
+set "ICON_PATH=%CORE_DIR%\app.ico"
+if not exist "%ICON_PATH%" set "ICON_PATH=%CORE_DIR%\app.png"
 if not exist "%ICON_PATH%" set "ICON_PATH=%CORE_DIR%\sing-box.exe"
 set "LINK_NAME=Singbox Tray"
 REM WorkingDirectory is crucial for the script to find its files

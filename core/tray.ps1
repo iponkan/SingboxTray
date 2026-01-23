@@ -4,6 +4,9 @@
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 
+# --- 配置日志开关 ---
+$EnableLogging = $false  # 如果需要排查问题，请改为 $true
+
 # --- 配置日志文件路径 ---
 $CurrentDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $LogFile = Join-Path $CurrentDir "debug.log"
@@ -11,15 +14,18 @@ $LogFile = Join-Path $CurrentDir "debug.log"
 # --- 日志函数 ---
 function Write-Log {
     param([string]$Message)
+    if (-not $EnableLogging) { return }
     $Timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
     $LogEntry = "[$Timestamp] $Message"
     $LogEntry | Out-File -FilePath $LogFile -Append -Encoding utf8
 }
 
 # 清空旧日志，开始新记录
-"" | Out-File -FilePath $LogFile -Encoding utf8
-Write-Log "=== 脚本启动 ==="
-Write-Log "工作目录: $CurrentDir"
+if ($EnableLogging) {
+    "" | Out-File -FilePath $LogFile -Encoding utf8
+    Write-Log "=== 脚本启动 ==="
+    Write-Log "工作目录: $CurrentDir"
+}
 
 # [强制启用 TLS 1.2]
 [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
@@ -82,7 +88,11 @@ function Start-Singbox {
         $ArgList = @("run", "-c", "$SingboxConf")
         # 使用 Start-Process 并在后台重定向输出
         try {
-            Start-Process -FilePath $SingboxExe -ArgumentList $ArgList -WindowStyle Hidden -WorkingDirectory $CurrentDir -RedirectStandardOutput $SingboxLog -RedirectStandardError $SingboxErr
+            if ($EnableLogging) {
+                Start-Process -FilePath $SingboxExe -ArgumentList $ArgList -WindowStyle Hidden -WorkingDirectory $CurrentDir -RedirectStandardOutput $SingboxLog -RedirectStandardError $SingboxErr
+            } else {
+                Start-Process -FilePath $SingboxExe -ArgumentList $ArgList -WindowStyle Hidden -WorkingDirectory $CurrentDir
+            }
             Write-Log "Singbox 启动命令已发出。"
             Start-Sleep -Seconds 1
             if (Get-Process -Name "sing-box" -ErrorAction SilentlyContinue) {
@@ -100,14 +110,17 @@ function Start-Singbox {
 
 # --- 托盘图标设置 ---
 $NotifyIcon = New-Object System.Windows.Forms.NotifyIcon
-if (Test-Path $AppIcon) {
+$AppIco = Join-Path $CurrentDir "app.ico"
+
+if (Test-Path $AppIco) {
+    $NotifyIcon.Icon = New-Object System.Drawing.Icon($AppIco)
+    Write-Log "已加载自定义图标 (ICO): $AppIco"
+} elseif (Test-Path $AppIcon) {
     try {
         $Bitmap = [System.Drawing.Bitmap]::FromFile($AppIcon)
-        $IntPtr = $Bitmap.GetHicon()
-        $NotifyIcon.Icon = [System.Drawing.Icon]::FromHandle($IntPtr)
-        Write-Log "已加载自定义图标: $AppIcon"
+        $NotifyIcon.Icon = [System.Drawing.Icon]::FromHandle($Bitmap.GetHicon())
+        Write-Log "已加载自定义图标 (PNG): $AppIcon"
     } catch {
-        Write-Log "加载自定义图标失败，改用默认图标"
         $NotifyIcon.Icon = [System.Drawing.Icon]::ExtractAssociatedIcon($SingboxExe)
     }
 } else {
