@@ -1,32 +1,33 @@
-## Singbox Tray Tool
+## Bonus: Singbox 托盘工具
 
-This project now also includes a tray utility for [sing-box](https://github.com/SagerNet/sing-box).
+本项目现在也包含一个用于 [sing-box](https://github.com/SagerNet/sing-box) 的托盘工具。
 
-### 📂 Singbox Directory Structure
+### 📂 Singbox 目录结构
 
 ```text
 SingboxTray/
 │
-├── SingboxTray.bat       <-- Startup Script (Double-click this)
+├── SingboxTray.bat       <-- 启动脚本 (双击这个)
 │
-└── core/                 <-- [Core Folder]
-    ├── sing-box.exe      <-- [NOTE] Place your sing-box.exe here
-    └── windows.json      <-- [NOTE] Place your config file here
+└── core/                 <-- [核心文件夹]
+    ├── sing-box.exe
+    └── windows.json
 ```
 
-### ✨ Singbox Features
+### ✨ Singbox 功能
 
-- **System Tray Icon**: Provides a dedicated tray icon for `sing-box` for easy management.
-- **UI Dashboard Access**: Quickly open the `sing-box` Web UI (`http://127.0.0.1:9090/ui/`) by double-clicking or right-clicking the tray icon.
-- **Silent Background Operation**: All processes run in the background without any disruptive console windows.
-- **Shortcuts & Auto-Start**: Easily create desktop shortcuts or add the tool to your startup programs via the `SingboxTray.bat` menu.
+- **系统托盘图标**：为 `sing-box` 提供一个独立的托盘图标，方便管理。
+- **UI 控制面板访问**：双击或右键单击图标可快速打开 `sing-box` 的 Web UI (`http://127.0.0.1:9090/ui/`)。
+- **后台静默运行**：所有进程都在后台运行，没有碍眼的命令行窗口。
+- **快捷方式与自启**：通过 `SingboxTray.bat` 菜单可以轻松创建桌面快捷方式或添加到开机自启。
 
-### 🚀 How to Use Singbox Tray
+### 🚀 Singbox 使用方法
 
-1.  Place your downloaded `sing-box.exe` and your configuration file, `windows.json`, into the `SingboxTray/core/` folder.
-2.  Double-click `SingboxTray/SingboxTray.bat`.
-3.  Use the menu options to **[1] Start the Tray**, or use **[2] and [3]** to create shortcuts and set up auto-start.
+1.  将你的配置文件 `windows.json` 放入 `SingboxTray/core/` 文件夹内。
+2.  双击运行 `SingboxTray/SingboxTray.bat`。
+3.  使用菜单选项创建快捷方式和设置开机自启。
 
-## 📄 License
+
+## 📄 开源协议
 
 MIT License
