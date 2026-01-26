@@ -52,6 +52,7 @@ Write-Log "已切换工作目录到: $(Get-Location)"
 
 $SingboxExe   = Join-Path $CurrentDir "sing-box.exe"
 $SingboxConf  = Join-Path $CurrentDir "windows.json"
+$UrlConf      = Join-Path (Split-Path $CurrentDir -Parent) "url.conf"
 $AppIcon      = Join-Path $CurrentDir "app.png"
 $SingboxLog   = Join-Path $CurrentDir "sing-box.log"
 $SingboxErr   = Join-Path $CurrentDir "sing-box.err"
@@ -62,6 +63,33 @@ if (-not (Test-Path $SingboxExe)) {
     Write-Log "致命错误: 找不到 sing-box.exe"
     [System.Windows.Forms.MessageBox]::Show("错误: 'sing-box.exe' 不存在！", "Singbox Tray", "OK", "Error")
     exit
+}
+
+# --- 函数: 下载配置文件 ---
+function Download-Config {
+    if (-not (Test-Path $UrlConf)) {
+        Write-Log "错误: 找不到 url.conf"
+        $NotifyIcon.ShowBalloonTip(3000, "Singbox Tray", "找不到 url.conf，请在项目根目录创建它并填入下载地址。", [System.Windows.Forms.ToolTipIcon]::Error)
+        return $false
+    }
+    
+    $DownloadUrl = (Get-Content $UrlConf -Raw).Trim()
+    if ([string]::IsNullOrWhiteSpace($DownloadUrl)) {
+        Write-Log "错误: url.conf 为空"
+        $NotifyIcon.ShowBalloonTip(3000, "Singbox Tray", "url.conf 内容为空，请填入下载地址。", [System.Windows.Forms.ToolTipIcon]::Warning)
+        return $false
+    }
+
+    Write-Log "正在从 $DownloadUrl 下载配置文件..."
+    try {
+        Invoke-WebRequest -Uri $DownloadUrl -OutFile $SingboxConf -ErrorAction Stop
+        Write-Log "下载成功: $SingboxConf"
+        return $true
+    } catch {
+        Write-Log "下载失败: $_"
+        $NotifyIcon.ShowBalloonTip(3000, "Singbox Tray", "下载配置文件失败，请检查网络和 url.conf 中的地址。", [System.Windows.Forms.ToolTipIcon]::Error)
+        return $false
+    }
 }
 
 # --- 函数: 停止服务 ---
@@ -139,12 +167,13 @@ $ContextMenu.Items.Add("-") | Out-Null
 
 
 
-$MenuItemRestart = $ContextMenu.Items.Add("仅重启服务")
+$MenuItemRestart = $ContextMenu.Items.Add("重新启动")
 $MenuItemRestart.Add_Click({
-    Write-Log "用户点击了: 仅重启服务"
+    Write-Log "用户点击了: 重新启动"
+    $NotifyIcon.ShowBalloonTip(1000, "Singbox Tray", "正在拉取配置并重启...", [System.Windows.Forms.ToolTipIcon]::Info)
     Stop-Singbox
+    Download-Config | Out-Null
     Start-Singbox
-    $NotifyIcon.ShowBalloonTip(1000, "Singbox Tray", "服务已重启", [System.Windows.Forms.ToolTipIcon]::Info)
 })
 
 $MenuItemExit = $ContextMenu.Items.Add("退出")
@@ -164,10 +193,14 @@ $NotifyIcon.Add_DoubleClick({ Start-Process $WebUIUrl })
 Stop-Singbox
 
 if (-not (Test-Path $SingboxConf)) {
-    Write-Log "主流程: 配置文件不存在，请确保 $SingboxConf 存在"
-    $NotifyIcon.ShowBalloonTip(3000, "Singbox Tray", "找不到配置文件 windows.json！", [System.Windows.Forms.ToolTipIcon]::Error)
+    Write-Log "主流程: 配置文件不存在，尝试下载..."
+    Download-Config | Out-Null
+}
+
+if (-not (Test-Path $SingboxConf)) {
+    Write-Log "主流程: 最终配置文件仍然不存在"
 } else {
-    Write-Log "主流程: 配置文件已存在"
+    Write-Log "主流程: 配置文件已就绪"
 }
 
 Start-Singbox
