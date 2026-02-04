@@ -172,8 +172,21 @@ $MenuItemRestart.Add_Click({
     Write-Log "用户点击了: 重新启动"
     $NotifyIcon.ShowBalloonTip(1000, "Singbox Tray", "正在拉取配置并重启...", [System.Windows.Forms.ToolTipIcon]::Info)
     Stop-Singbox
-    Download-Config | Out-Null
+    $updateResult = Download-Config
     Start-Singbox
+    
+    # 等待一会检查进程是否启动
+    Start-Sleep -Seconds 1
+    $proc = Get-Process -Name "sing-box" -ErrorAction SilentlyContinue
+    if ($proc) {
+        if ($updateResult) {
+            $NotifyIcon.ShowBalloonTip(3000, "Singbox Tray", "配置已更新并成功重启！", [System.Windows.Forms.ToolTipIcon]::Info)
+        } else {
+            $NotifyIcon.ShowBalloonTip(3000, "Singbox Tray", "重启成功，但配置拉取失败。", [System.Windows.Forms.ToolTipIcon]::Warning)
+        }
+    } else {
+        $NotifyIcon.ShowBalloonTip(3000, "Singbox Tray", "启动失败，请查看 core\sing-box.err", [System.Windows.Forms.ToolTipIcon]::Error)
+    }
 })
 
 $MenuItemExit = $ContextMenu.Items.Add("退出")
