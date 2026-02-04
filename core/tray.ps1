@@ -69,14 +69,14 @@ if (-not (Test-Path $SingboxExe)) {
 function Download-Config {
     if (-not (Test-Path $UrlConf)) {
         Write-Log "错误: 找不到 url.conf"
-        $NotifyIcon.ShowBalloonTip(3000, "Singbox Tray", "找不到 url.conf，请在项目根目录创建它并填入下载地址。", [System.Windows.Forms.ToolTipIcon]::Error)
+        $NotifyIcon.ShowBalloonTip(1000, "Singbox Tray", "找不到 url.conf，请在项目根目录创建它并填入下载地址。", [System.Windows.Forms.ToolTipIcon]::Error)
         return $false
     }
     
     $DownloadUrl = (Get-Content $UrlConf -Raw).Trim()
     if ([string]::IsNullOrWhiteSpace($DownloadUrl)) {
         Write-Log "错误: url.conf 为空"
-        $NotifyIcon.ShowBalloonTip(3000, "Singbox Tray", "url.conf 内容为空，请填入下载地址。", [System.Windows.Forms.ToolTipIcon]::Warning)
+        $NotifyIcon.ShowBalloonTip(1000, "Singbox Tray", "url.conf 内容为空，请填入下载地址。", [System.Windows.Forms.ToolTipIcon]::Warning)
         return $false
     }
 
@@ -87,7 +87,7 @@ function Download-Config {
         return $true
     } catch {
         Write-Log "下载失败: $_"
-        $NotifyIcon.ShowBalloonTip(3000, "Singbox Tray", "下载配置文件失败，请检查网络和 url.conf 中的地址。", [System.Windows.Forms.ToolTipIcon]::Error)
+        $NotifyIcon.ShowBalloonTip(1000, "Singbox Tray", "下载配置文件失败，请检查网络和 url.conf 中的地址。", [System.Windows.Forms.ToolTipIcon]::Error)
         return $false
     }
 }
@@ -106,7 +106,7 @@ function Start-Singbox {
     Write-Log "尝试启动 Singbox..."
     if (-not (Test-Path $SingboxConf)) {
         Write-Log "无法启动: 缺少 windows.json"
-        $NotifyIcon.ShowBalloonTip(3000, "Singbox Tray", "缺少配置文件！请将 windows.json 放入 core 目录。", [System.Windows.Forms.ToolTipIcon]::Warning)
+        $NotifyIcon.ShowBalloonTip(1000, "Singbox Tray", "缺少配置文件！请将 windows.json 放入 core 目录。", [System.Windows.Forms.ToolTipIcon]::Warning)
         return 
     }
     
@@ -180,12 +180,12 @@ $MenuItemRestart.Add_Click({
     $proc = Get-Process -Name "sing-box" -ErrorAction SilentlyContinue
     if ($proc) {
         if ($updateResult) {
-            $NotifyIcon.ShowBalloonTip(3000, "Singbox Tray", "配置已更新并成功重启！", [System.Windows.Forms.ToolTipIcon]::Info)
+            $NotifyIcon.ShowBalloonTip(1000, "Singbox Tray", "配置已更新并成功重启！", [System.Windows.Forms.ToolTipIcon]::Info)
         } else {
-            $NotifyIcon.ShowBalloonTip(3000, "Singbox Tray", "重启成功，但配置拉取失败。", [System.Windows.Forms.ToolTipIcon]::Warning)
+            $NotifyIcon.ShowBalloonTip(1000, "Singbox Tray", "重启成功，但配置拉取失败。", [System.Windows.Forms.ToolTipIcon]::Warning)
         }
     } else {
-        $NotifyIcon.ShowBalloonTip(3000, "Singbox Tray", "启动失败，请查看 core\sing-box.err", [System.Windows.Forms.ToolTipIcon]::Error)
+        $NotifyIcon.ShowBalloonTip(1000, "Singbox Tray", "启动失败，请查看 core\sing-box.err", [System.Windows.Forms.ToolTipIcon]::Error)
     }
 })
 
@@ -217,4 +217,14 @@ if (-not (Test-Path $SingboxConf)) {
 }
 
 Start-Singbox
+
+# 首次启动成功后提示
+Start-Sleep -Seconds 1
+$proc = Get-Process -Name "sing-box" -ErrorAction SilentlyContinue
+if ($proc) {
+    $NotifyIcon.ShowBalloonTip(1000, "Singbox Tray", "Singbox 已成功启动！", [System.Windows.Forms.ToolTipIcon]::Info)
+} else {
+    $NotifyIcon.ShowBalloonTip(1000, "Singbox Tray", "启动失败，请检查 core\sing-box.err", [System.Windows.Forms.ToolTipIcon]::Error)
+}
+
 [System.Windows.Forms.Application]::Run()
