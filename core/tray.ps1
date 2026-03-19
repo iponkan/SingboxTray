@@ -205,10 +205,8 @@ $NotifyIcon.Add_DoubleClick({ Start-Process $WebUIUrl })
 # --- 主执行流程 ---
 Stop-Singbox
 
-if (-not (Test-Path $SingboxConf)) {
-    Write-Log "主流程: 配置文件不存在，尝试下载..."
-    Download-Config | Out-Null
-}
+Write-Log "主流程: 启动前尝试拉取远程配置更新..."
+Download-Config | Out-Null
 
 if (-not (Test-Path $SingboxConf)) {
     Write-Log "主流程: 最终配置文件仍然不存在"
