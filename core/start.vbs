@@ -1,14 +1,16 @@
 Option Explicit
-Dim fso, currentDir, psScript
+Dim fso, shellApp, currentDir, psArgs
 
 ' Create necessary objects
 Set fso = CreateObject("Scripting.FileSystemObject")
+Set shellApp = CreateObject("Shell.Application")
 
 ' Get the directory where this VBScript is located
 currentDir = fso.GetParentFolderName(WScript.ScriptFullName)
-' Construct the full path to the PowerShell script
-psScript = "-WindowStyle Hidden -ExecutionPolicy Bypass -File " & chr(34) & currentDir & "\tray.ps1" & chr(34)
+' Construct the PowerShell arguments.
+' Launching elevated directly from VBS avoids the brief console flash that can
+' happen when a hidden non-admin PowerShell relaunches itself with UAC.
+psArgs = "-NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File " & chr(34) & currentDir & "\tray.ps1" & chr(34)
 
-' Execute the PowerShell script with administrator privileges
-' Changed the last parameter from 1 (SW_SHOWNORMAL) to 0 (SW_HIDE) to prevent window flashing
-CreateObject("Shell.Application").ShellExecute "powershell.exe", psScript, currentDir, "runas", 0
+' Execute the PowerShell script with administrator privileges and keep it hidden.
+shellApp.ShellExecute "powershell.exe", psArgs, currentDir, "runas", 0

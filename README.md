@@ -32,6 +32,11 @@ SingboxTray/
 4.  **快捷方式**：使用 `SingboxTray.bat` 的选项创建桌面快捷方式，方便后续直接启动。
 5.  **更新配置**：如需同步远程配置的更改，只需右键点击托盘图标并选择 **“重新启动”**。
 
+### ⚠️ 兼容性说明
+
+- 无需开启 Windows “使用 Unicode UTF-8 提供全球语言支持”。PowerShell 脚本应以 **UTF-8 with BOM** 保存，避免 Windows PowerShell 5.1 在默认系统编码下把中文字符串解析成乱码。
+- `tray.ps1` 会自动检测管理员权限；如果当前不是管理员，会触发 UAC 重新启动自身。用户取消 UAC 时会看到明确提示。
+
 ## 📄 开源协议
 
 MIT License

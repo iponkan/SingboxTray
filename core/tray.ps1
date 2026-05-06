@@ -1,4 +1,4 @@
-# ==========================================
+﻿# ==========================================
 #      Singbox Tray (Debug Version)
 # ==========================================
 Add-Type -AssemblyName System.Windows.Forms
@@ -9,7 +9,9 @@ $EnableLogging = $false  # 如果需要排查问题，请改为 $true
 
 # --- 配置日志文件路径 ---
 $CurrentDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+$ScriptPath = [System.IO.Path]::GetFullPath($MyInvocation.MyCommand.Path)
 $LogFile = Join-Path $CurrentDir "debug.log"
+$RequireAdmin = $true
 
 # --- 日志函数 ---
 function Write-Log {
@@ -31,12 +33,32 @@ if ($EnableLogging) {
 [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
 Write-Log "安全协议已设置为 TLS 1.2"
 
+# --- 管理员权限检查 ---
+function Test-IsAdministrator {
+    $Identity = [Security.Principal.WindowsIdentity]::GetCurrent()
+    $Principal = New-Object Security.Principal.WindowsPrincipal($Identity)
+    return $Principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+}
+
+if ($RequireAdmin -and -not (Test-IsAdministrator)) {
+    Write-Log "当前不是管理员权限，尝试通过 UAC 重新启动。"
+    $PowerShellArgs = "-NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File `"$ScriptPath`""
+
+    try {
+        Start-Process -FilePath "powershell.exe" -ArgumentList $PowerShellArgs -WorkingDirectory $CurrentDir -Verb RunAs -ErrorAction Stop
+    } catch {
+        [System.Windows.Forms.MessageBox]::Show("Singbox Tray 需要管理员权限才能启动 sing-box。请允许 UAC 提示后重试。", "Singbox Tray", "OK", "Warning") | Out-Null
+    }
+    exit
+}
+
 # --- 杀死旧进程 ---
 $CurrentPID = $PID
 try {
     Get-WmiObject Win32_Process | Where-Object { 
         $_.Name -match 'powershell' -and 
-        $_.CommandLine -like '*SingboxTray\core\tray.ps1*' -and 
+        $_.CommandLine -and
+        $_.CommandLine.Contains($ScriptPath) -and
         $_.ProcessId -ne $CurrentPID 
     } | ForEach-Object { 
         Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue 
